@@ -3,15 +3,28 @@
  * All responses in { success: Boolean, msg: String, data: ANY, lvl: String }
  */
 
+
+/**
+ * Retrieves a single Project doc/object from the database
+ * @param {*} eve 
+ * @param {*} data = { id: String }
+ * @req User Creds, Store Info
+ * @returns {data: Object} Project object
+ */
+getProject
+    // Query DB based on needs
+    // Return result
+
+
 /**
  * Retrieves list of projects from the database
  * @param {*} eve 
- * @param {*} data = { dept: String}
+ * @param {*} data = { dept: String }
  * @req User Creds, Store Info
  * @returns {data: Array} list of projects
  */
+queryProjects
 getUserProjects
-getAllProjects
 getDeptProjects
 
 getActiveProjects
@@ -147,14 +160,15 @@ updateProjectID
 /**
  * Splits off a new Project from an existing one
  * @param {*} eve 
- * @param {*} data = { project: Object, newid: String }
+ * @param {*} data = { project: Object }
  * @req User Creds (spdrive), Store Info
  * @returns {old: Object, new: Object}
  */   
 splitProject
     // Clone Project object
     // Delete _id from cloned object
-    // Update cloned object (.id, .froot)
+    // Update cloned object.froot
+    // Assign new object.id using nextquotenum
     // Attempt to create a new project folder for the new project object
     // Copy contents of old project folder to the new project folder
     // Update lastdate and datelog on original Project object ('Split to:')

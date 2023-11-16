@@ -47,6 +47,19 @@ moveFolder
 
 
 /**
+ * Copies an existing folder to another location
+ * @param {*} eve 
+ * @param {*} data = { oldpath: String, newpath: String }
+ * @req User Creds (spdrive)
+ * @returns {data: null}
+ */
+copyFolder
+    // Check to see that old folder exists
+    // Check that new file path is not already used
+    // Copy contents of old into new 
+
+
+/**
  * Exactly what it sounds like...
  * @param {*} eve 
  * @param {*} data = { fpath: String }

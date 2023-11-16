@@ -71,13 +71,3 @@ saveKey
  */
 makeCurrent
     // Update DB with new info
-
-
-/**
- * Takes a deprtment and gets the keys
- * @param {*} eve 
- * @param {*} data = {allow any thing in scheme}
- * @req Store info
- * @returns success/fail info
- */
-queryKeys
