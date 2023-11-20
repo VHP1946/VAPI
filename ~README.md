@@ -1,6 +1,7 @@
 VAPI
 
 
+
 # Packages
 - vhp-core
 - vhp-logging
@@ -41,3 +42,23 @@ request_schemes: A place to hold any validation for the controllers. All schemes
 ```
 
 logging: More than likely be moved out and packaged, but for not a module to attach to the server. It will work along side the server/handlers and controllers to tracker request progress. Logging will have a config file (in config folder) to set the levels and messages specific to 
+
+# Routes
+
+Contents:
+- Tracker
+
+
+
+
+## Tracker
+ Name:
+ Desription:
+ Pack:
+ Response:
+
+
+
+
+
+
