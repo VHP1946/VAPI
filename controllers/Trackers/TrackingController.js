@@ -1,3 +1,7 @@
+
+
+
+
 /**
  * Routes to handle interactions with Tracker objects and databases
  * All responses in { success: Boolean, msg: String, data: ANY, lvl: String }
@@ -35,6 +39,7 @@ getDeptTracks
  * @param {*} eve 
  * @param {*} data = { track: Object }
  * @req Data-Structures, User Creds (to set estimator)
+ * @errors 
  * @returns {data: Object} new Track object
  */
 createTrack
@@ -76,3 +81,18 @@ deleteTrack
  * @returns {data: null}
  */
 checkTrack = getTrack
+
+
+/**
+ * Gather analytics
+ * @param {
+ *  dept:String
+ * } data in handler.data
+ * 
+ * 
+ * depending on department, rotate a analytic function. If no match use default
+ * 
+ * 
+ * 
+ * 
+ */
