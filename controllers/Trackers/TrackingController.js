@@ -1,4 +1,35 @@
 /**
+ *  getTrack
+ *  queryTracks
+ *  getUserTracks
+ *  getDeptTracks
+ *  
+ *  createTrack
+ *  saveTrack
+ *  deleteTrack
+ * 
+ *  payTracks
+ *  closeTracks
+ *  
+ *  
+ *  
+ */
+
+module.exports = class TrackingController{
+    constructor(){
+
+        return{
+            one:this.one
+        }
+    }
+
+    GETmetrics=(handler)=>{
+
+    }
+}
+
+
+/**
  * Routes to handle interactions with Tracker objects and databases
  * All responses in { success: Boolean, msg: String, data: ANY, lvl: String }
  */

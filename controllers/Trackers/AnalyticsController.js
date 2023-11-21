@@ -5,7 +5,16 @@
 
 const tools = require('./ReportingTools.js');
 
+module.exports = class TrackingController{
+    constructor(){
 
+        return{
+            one:this.one
+        }
+    }
+
+    GETmetrics=(handler)
+}
 /**
  * Creates a set of basic metrics for requested query
  * @param {*} data
