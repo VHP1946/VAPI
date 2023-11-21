@@ -12,8 +12,8 @@ module.exports = {
  * @param {*} list
  * @returns metrics object
  */
-var GENmetrics=(list)=>{
-    return new Promise ((resolve,reject)=>{
+var GENmetrics = (list) => {
+    return new Promise((resolve, reject) => {
         let metrics = {};
         // calc averages
 
@@ -21,10 +21,16 @@ var GENmetrics=(list)=>{
     })
 }
 
-
-var GENanalytics=()=>{
-    return new Promise ((resolve,reject)=>{
+/**
+ * Generates more detailed analytics for given data
+ * @param {*} list
+ * @returns analytics object
+ */
+var GENanalytics = (list) => {
+    return new Promise((resolve, reject) => {
+        let metrics = GENmetrics(list);
         let analytics = {};
+
         return resolve(analytics)
     })
 }
