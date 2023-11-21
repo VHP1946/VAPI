@@ -1,7 +1,3 @@
-
-
-
-
 /**
  * Routes to handle interactions with Tracker objects and databases
  * All responses in { success: Boolean, msg: String, data: ANY, lvl: String }

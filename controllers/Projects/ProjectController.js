@@ -176,3 +176,17 @@ splitProject
     // Update original Project doc in the DB
     // Insert new object into DB
     // Return both Project objects
+
+
+/**
+ * Initializes the project builder with neccessary info
+ * @param {*} eve 
+ * @param {*} data 
+ * @returns settings object, Price Key object, user info and spdrive path
+ */    
+initProject
+    // Pull projecttoload
+    // Pull correct Price Key
+    // Pull settings
+    // Pull userinfo & spdrive
+    // Return all info
