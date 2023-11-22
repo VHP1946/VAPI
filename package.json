@@ -1,0 +1,27 @@
+{
+  "name": "vapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "devDependencies": {
+    "vhp-api": "^0.1.20",
+    "readline": "^1.3.0"
+  },
+  "scripts": {
+    "test": "node ./testing/server-tester.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VHP1946/VAPI.git"
+  },
+  "author": "cmv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VHP1946/VAPI/issues"
+  },
+  "homepage": "https://github.com/VHP1946/VAPI#readme",
+  "dependencies": {
+    "vapi-core-server": "^0.0.2"
+  }
+}
