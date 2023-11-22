@@ -24,7 +24,18 @@ module.exports = class TrackingController{
     }
 
     GETmetrics=(handler)=>{
+        //get item from db
+        handler.request({
+            body:{
+                db:'',
+                collect:'',
+                method:'QUERY'
 
+            },
+            options:handler.getService('mart')
+        }).then(answr=>{
+
+        });
     }
 }
 
