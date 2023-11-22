@@ -12,8 +12,9 @@
  *  SAVEtrack
  *  DELETEtrack
  * 
- *  payTracks
- *  closeTracks
+ *  PAYtracks
+ *  CLOSEtracks
+ *  ARCHIVEtracks
  *  
  */
 
@@ -23,10 +24,11 @@ module.exports = class TrackingController {
 
     /**
      * Retrieves a list of tracking items from the database based on requested query
-     * @returns {data: Array} list of Tracks
+     * @request reqdata = query = { property: value }
+     * @returns {resdata: Array} list of Tracks
      */
-    QUERYtracks = (handler) =>{
-        return new Promise(async (resolve,reject)=>{
+    QUERYtracks = (handler) => {
+        return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let query = handler.pack.reqdata;
             let resp = await handler.services.mart({
@@ -48,7 +50,8 @@ module.exports = class TrackingController {
 
     /**
      * Retrieves a single Track doc/object from the database
-     * @returns {data: Object} Track object
+     * @request reqdata = Track object / id ?
+     * @returns {resdata: Object} Track object
      */
     GETtrack = (handler) => {
         return new Promise(async (resolve, reject) => {
@@ -73,7 +76,8 @@ module.exports = class TrackingController {
 
     /**
      * Retrieves list of tracking items from the database
-     * @returns {data: Array} list of Tracks
+     * @request none
+     * @returns {resdata: Array} list of Tracks
      */
     GETallTracks = (handler) => {
         return new Promise(async (resolve, reject) => {
@@ -94,14 +98,15 @@ module.exports = class TrackingController {
     }
 
     /**
-     * Retrieves list of tracking items from the database based on current user
-     * @returns {data: Array} list of Tracks
+     * Retrieves a list of the CURRENT USER's tracking items from the database
+     * @request User's Creds ?
+     * @returns {resdata: Array} list of Tracks
      */
     GETuserTracks = (handler) => {
         return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
-            let username = handler.username;
-            let resp = await handler.services.mart({  // needs to be in () so compiler does not see { data: pack.data } as a code block
+            let username = handler.username;  // Pass via reqdata, handler itself, etc?
+            let resp = await handler.services.mart({  
                 db: 'Replacement',
                 collect: collection,
                 method: 'QUERY',
@@ -118,7 +123,9 @@ module.exports = class TrackingController {
 
     /**
      * Creates a new Track using "shell" info
-     * @returns {data: Object} new Track object
+     *   Model to handle data structure, dates, user info / estimator
+     * @request reqdata = Track object = { id: String, projectname: String, ...}
+     * @returns {resdata: Object} new Track object
      */
     CREATEtrack = (handler) => {
         return new Promise(async (resolve, reject) => {
@@ -141,22 +148,23 @@ module.exports = class TrackingController {
 
     /**
      * Saves a Track to the database
-     * @returns {data: Object} updated Track object
+     * @require reqdata = Track object to be saved/updated
+     * @returns {resdata: Object} updated Track object
      *    Update lastdate to current date (?)
      *    Update DB doc with new object info
      *    Return updated Track object
      */
     SAVEtrack = (handler) => {
-        return new Promise (async (resolve,reject) => {
+        return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let tobj = handler.pack.reqdata;
             let resp = await handler.services.mart({
                 db: 'Replacement',
                 collect: collection,
                 method: 'UPDATE',
-                options: { 
+                options: {
                     query: { id: tobj.id },
-                    doc: tobj 
+                    doc: tobj
                 }
             });
             handler.pack.success = resp.success;
@@ -164,23 +172,24 @@ module.exports = class TrackingController {
             handler.pack.errors = resp.errors;
             handler.pack.msg = handler.pack.success ? 'Tracking item saved' : 'Tracking item NOT saved';
 
-            return resolve (handler);
+            return resolve(handler);
         })
     }
 
     /**
      * Deletes a Track from the database
-     * @returns {data: null}
+     * @require reqdata = Track ID
+     * @returns {resdata: null}
      */
     DELETEtrack = (handler) => {
-        return new Promise (async (resolve,reject) => {
+        return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let tid = handler.pack.reqdata;
             let resp = await handler.services.mart({
                 db: 'Replacement',
                 collect: collection,
                 method: 'REMOVE',
-                options: { 
+                options: {
                     query: { id: tid },
                 }
             });
@@ -188,7 +197,60 @@ module.exports = class TrackingController {
             handler.pack.resdata = null;
             handler.pack.errors = resp.errors;
             handler.pack.msg = handler.pack.success ? 'Tracking item deleted' : 'Tracking item NOT deleted';
-            
+
+            return resolve(handler);
+        })
+    }
+
+
+    /**       PAYOUT FLOW
+     * PAYtracks (pulls list, does initial marking)
+     * Tracks listed on screen for manager's review (manager adjusts marks as needed)
+     * CLOSEtracks (handles final status changes and recording)
+     * @ 1 Year : ARCHIVEtracks
+     */
+
+    /**
+     * Marks track items as "to be paid"
+     * @returns 
+     */
+    PAYtracks = (handler) => {
+        return new Promise(async (resolve, reject) => {
+            // Get list from DB (per CONS, one CONS, etc?) / Get list from application (user checks off what they want)
+            // Validate list (check for basic "can be paid" flags)
+            // Change STATUS
+            // Save list back to DB
+            // Return stats (number approved, number rejected, why, etc.)
+            return resolve(handler);
+        })
+    }
+
+    /**
+     * Closes out track items
+     * Handles split between "to be paid" and "not to be paid"
+     * @returns 
+     */
+    CLOSEtracks = (handler) => {
+        return new Promise(async (resolve, reject) => {
+            // Pull basic list from application (manager should have final approved/denied)
+            // Change STATUS
+            // Save list back to DB
+            // Return stats (number approved, number rejected, etc.)
+            return resolve(handler);
+        })
+    }
+
+    /**
+     * Performs final archival process for tracks once closed and confirmed
+     * @returns 
+     */
+    ARCHIVEtracks = (handler) => {
+        return new Promise(async (resolve, reject) => {
+            // Get list from DB (use search for "closed"?)
+            // Change STATUS
+            // Change STAGE
+            // Update DB doc
+            // Relocate to "archive" DB?
             return resolve(handler);
         })
     }

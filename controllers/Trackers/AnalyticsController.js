@@ -1,12 +1,14 @@
 /**
  * Routes to handle interactions with Reporting and Analytics requests
- * All responses in pack = { success: Boolean, msg: String, data: ANY, lvl: String }
  * 
  * GETmetrics
  * GETanalytics
+ * GETcommissions
  * GETmonthBreakdown
  * GETannualBreakdown
  * 
+ * GETreportList
+ * GETreport
  */
 
 const tools = require('./tools/track_analytics.js');
@@ -17,9 +19,8 @@ module.exports = class AnalyticsController {
 
     /**
      * Creates a set of basic metrics for requested query
-     * @param {*} data
      * @requires
-     * @returns {data: Object} object containing metrics info
+     * @returns {resdata: Object} object containing metrics info
      */
     GETmetrics = (handler) => {
         return new Promise(async (resolve, reject) => {
@@ -42,9 +43,8 @@ module.exports = class AnalyticsController {
 
     /**
      * Creates a set of deeper metrics/analytics for requested query
-     * @param {*} data
      * @requires
-     * @returns {data: Object} object containing analytics info
+     * @returns {resdata: Object} object containing analytics info
      */
     GETanalytics = (handler) => {
         return new Promise(async (resolve, reject) => {
@@ -65,35 +65,43 @@ module.exports = class AnalyticsController {
             return resolve(pack)
         })
     }
+
+    /**
+     * Creates a commission payout "report"
+     * @returns {data: Object} object containing commissions details
+     */
+    GETcommissions = (handler) => {
+        return new Promise (async (resolve,reject) => {
+            
+            return resolve (handler);
+        })
+    }
 }
 
 /**
  * Creates a set of data structured around reporting a whole/single month or year
- * @param {*} data
  * @req User Creds
- * @returns {data: Object} object containing breakdown info
+ * @returns {resdata: Object} object containing breakdown info
  */
-getMonthBreakdown
-getAnnualBreakdown
+GETmonthBreakdown
+GETannualBreakdown
 
 /**
  * Provides a list of reports available for given conditions
- * @param {*} data
  * @req User Creds
- * @returns {data: Object} list of Report names and descriptions
+ * @returns {resdata: Object} list of Report names and descriptions
  */
-getReportList
+GETreportList
 // Query available reports
 // Filter to only those that user has access to
 // Return report list
 
 /**
  * Returns the data neccessary for a requested report
- * @param {*} data = Report name
  * @req User Creds
- * @returns {data: Object} object containing report info (pdf?)
+ * @returns {resdata: Object} object containing report info (pdf?)
  */
-getReport
+GETreport
 // Check that report exists
 // Check that user has access to that report
 // Calculate report requirements
