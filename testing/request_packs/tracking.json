@@ -1,8 +1,8 @@
 {
-    "GetTrack":{
+    "GETtrack":{
         "request":{
             "default":{
-                "id":""
+                "id": 4
             },
             "test":{
 
@@ -10,6 +10,7 @@
         },
         "response":{
             "default":{
+
                 "result":4
             }
         }

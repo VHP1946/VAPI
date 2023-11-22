@@ -45,6 +45,7 @@ const selector = (route,type)=>{
     }
 }
 let stashmodule = null;
+
 const checker = ({
     module,
     route,
