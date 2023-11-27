@@ -1,9 +1,12 @@
-const CoreServer = require('vapi-core-server');
+const CoreServer = require('../server.js');//)('vapi-core-server');
 //index of contollers is function that returns object
-//const cons = (index.js of controllers)
 
 let core = new CoreServer({
-    config: require('./dev/vhp-config.json'),
+    config: require('./configs/vhp-config.json'),
     type: 'http',
-    controllers: {}
+    controllers: {
+        routes:require('./controllers/index.js'),
+        models:require('./models/index.js'),
+        request_schemes:require('./request_schemes/index.js')
+    }
 })

@@ -1,25 +1,36 @@
 /**
  * Routes to handle interactions with Tracker objects and databases
- * 
+ *
  *  QUERYtracks
- * 
+ *
  *  GETtrack
  *  GETallTracks
  *  GETuserTracks
  *  getDeptTracks
- *  
+ *
  *  CREATEtrack
  *  SAVEtrack
  *  DELETEtrack
- * 
+ *
  *  PAYtracks
  *  CLOSEtracks
  *  ARCHIVEtracks
- *  
+ *
  */
 
 module.exports = class TrackingController {
-    constructor() {
+    constructor(lib) {
+        /* Any setup for tracking controller
+
+        */
+        return { //export all routes
+            QUERYtracks:{
+                name:'QUERYtracks',
+                route:this.QUERYtracks,
+                models:['QUERYtracks'],
+                scheme:'QUERYtracks'
+            }
+        }
     }
 
     /**
@@ -27,11 +38,14 @@ module.exports = class TrackingController {
      * @request reqdata = query = { property: value }
      * @returns {resdata: Array} list of Tracks
      */
-    QUERYtracks = (handler) => {
+    QUERYtracks = (handler,server) => {
         return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
-            let query = handler.pack.reqdata;
-            let resp = await handler.services.mart({
+            let query = handler.reqdata;
+            console.log("SERVER > ",server);
+            console.log("Handler >", handler);
+            /*
+            let resp = await server.services.store.request({
                 db: 'Replacement',
                 collect: collection,
                 method: 'QUERY',
@@ -39,10 +53,11 @@ module.exports = class TrackingController {
                     query: query
                 }
             })
-            handler.pack.success = resp.success;
-            handler.pack.resdata = resp.data;
-            handler.pack.errors = resp.errors;
-            handler.pack.msg = handler.pack.success ? 'Tracks retrieved' : 'Tracks NOT retrieved';
+            */
+            handler.respack.success = resp.success;
+            handler.respack.data = resp.data;
+            handler.respack.errors = resp.errors;
+            handler.respack.msg = handler.respack.success ? 'Tracks retrieved' : 'Tracks NOT retrieved';
 
             return resolve(handler);
         })
@@ -53,7 +68,7 @@ module.exports = class TrackingController {
      * @request reqdata = Track object / id ?
      * @returns {resdata: Object} Track object
      */
-    GETtrack = (handler) => {
+    GETtrack = (handler,server) => {
         return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let idTOfind = handler.pack.reqdata.id;
@@ -79,7 +94,7 @@ module.exports = class TrackingController {
      * @request none
      * @returns {resdata: Array} list of Tracks
      */
-    GETallTracks = (handler) => {
+    GETallTracks = (handler,server) => {
         return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let resp = await handler.services.mart({
@@ -106,7 +121,7 @@ module.exports = class TrackingController {
         return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let username = handler.username;  // Pass via reqdata, handler itself, etc?
-            let resp = await handler.services.mart({  
+            let resp = await handler.services.mart({
                 db: 'Replacement',
                 collect: collection,
                 method: 'QUERY',
@@ -212,7 +227,7 @@ module.exports = class TrackingController {
 
     /**
      * Marks track items as "to be paid"
-     * @returns 
+     * @returns
      */
     PAYtracks = (handler) => {
         return new Promise(async (resolve, reject) => {
@@ -228,7 +243,7 @@ module.exports = class TrackingController {
     /**
      * Closes out track items
      * Handles split between "to be paid" and "not to be paid"
-     * @returns 
+     * @returns
      */
     CLOSEtracks = (handler) => {
         return new Promise(async (resolve, reject) => {
@@ -242,7 +257,7 @@ module.exports = class TrackingController {
 
     /**
      * Performs final archival process for tracks once closed and confirmed
-     * @returns 
+     * @returns
      */
     ARCHIVEtracks = (handler) => {
         return new Promise(async (resolve, reject) => {
@@ -255,8 +270,3 @@ module.exports = class TrackingController {
         })
     }
 }
-
-
-getDeptTracks
-// Query DB based on needs
-// Return results

@@ -2,7 +2,7 @@
 	"name":"vhp-core",
 	"port":5000,
 	"dev":true,
-	"access":{
+	"auth":{
 		"name":"STORE","group":"MART","type":"server",
 		"options":{
 			"hostname":"10.0.1.212",
