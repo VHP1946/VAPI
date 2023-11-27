@@ -14,5 +14,16 @@
                 "result":4
             }
         }
+    },
+    "QUERYtracks":{
+        "request":{
+            "default":{
+                "id":4
+            }
+        },
+        "response":{
+            "default":{
+            }
+        }
     }
 }

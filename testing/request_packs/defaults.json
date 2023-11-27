@@ -1,0 +1,10 @@
+{
+    "PING":{
+        "request":{
+            "default":{}
+        },
+        "response":{
+            "default":{}
+        }
+    }
+}
