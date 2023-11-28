@@ -1,29 +1,21 @@
 {
-    "GETtrack":{
-        "request":{
-            "default":{
-                "id": 4
+    "QUERYtracks": {
+        "request": {
+            "default": {
+                "data": {
+                    "property": "value"
+                }
             },
-            "test":{
+            "test": {
+                "data": {
+                    "estimator": "MURRY"
+                }
 
             }
         },
-        "response":{
-            "default":{
-
-                "result":4
-            }
-        }
-    },
-    "QUERYtracks":{
-        "request":{
-            "default":{
-                "id":4
-            }
-        },
-        "response":{
-            "default":{
-            }
+        "response": {
+            "default": {},
+            "test": {}
         }
     }
 }
