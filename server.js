@@ -1,4 +1,4 @@
-const CoreServer = require('../server.js');//)('vapi-core-server');
+const CoreServer = require('vapi-core-server');
 //index of contollers is function that returns object
 
 let core = new CoreServer({
