@@ -2,6 +2,7 @@
 
 // list of modules -> JSON file
 let modules = {
+    defaults:{},
     tracking:{}
 }
 
@@ -19,11 +20,11 @@ console.log('Modules are setup >\n',modules);
  * Takes module to find JSON file.
  * Takes route to match route in file
  * Takes type to test a pack in that route. Can
- * add any pack to route and reach it through the 
+ * add any pack to route and reach it through the
  * type. A 'default' pack should always exist.
- * 
- * @param {String} module 
- * @param {String} route 
+ *
+ * @param {String} module
+ * @param {String} route
  * @param {String} type
  */
 const selector = (route,type)=>{
@@ -41,7 +42,7 @@ const selector = (route,type)=>{
     if(runroute){
         stashmodule = require(`./${runmod}.json`);
         try{return stashmodule[route].request[type]}
-        catch(err){console.error(err);return false;} 
+        catch(err){console.error(err);return false;}
     }
 }
 let stashmodule = null;
