@@ -1,3 +1,5 @@
-module.exports={
-    ...require('./tracking.js')
+let TrackingModel = require('./TrackingModel.js');
+
+module.exports = {
+    ...TrackingModel
 }

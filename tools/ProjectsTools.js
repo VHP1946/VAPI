@@ -3,7 +3,6 @@ module.exports = {
 }
 
 
-
 /**
  * Create a new and unique quote number by
  * using the date / time and the app name
@@ -14,7 +13,7 @@ module.exports = {
  * @returns id as String
  */
 var nxtprojectnum = (appinfo, suffix) => {
-	let id = `${appinfo.name}-${new Date().getTime()}`
-    if(suffix){id = id + `-${suffix}`}
+    let id = `${appinfo.name}-${new Date().getTime()}`
+    if (suffix) { id = id + `-${suffix}` }
     return id;
 }

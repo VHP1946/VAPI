@@ -1,5 +1,5 @@
 /**
- * Tools/functions for use by Reporting Controller
+ * Tools/functions for use by Analytics Controller
  */
 module.exports = {
     GENmetrics,
@@ -17,7 +17,7 @@ var GENmetrics = (list) => {
         let metrics = {};
         // calc averages
 
-        return resolve(metrics)
+        return resolve(metrics);
     })
 }
 
@@ -31,7 +31,7 @@ var GENanalytics = (list) => {
         let metrics = GENmetrics(list);
         let analytics = {};
 
-        return resolve(analytics)
+        return resolve(analytics);
     })
 }
 

@@ -20,29 +20,82 @@
 
 module.exports = class TrackingController {
     constructor(lib) {
-        /* Any setup for tracking controller
+        this.tools = lib;
 
-        */
-        return { //export all routes
-            QUERYtracks:{
-                name:'QUERYtracks',
-                route:this.QUERYtracks,
-                models:['QUERYtracks'],
-                scheme:'QUERYtracks'
+        return {  // export all routes
+            QUERYtracks: {
+                name: 'QUERYtracks',
+                route: this.QUERYtracks,
+                models: ['QUERYtracks'],
+                scheme: 'QUERYtracks'
+            },
+            GETtrack: {
+                name: 'GETtrack',
+                route: this.GETtrack,
+                models: ['GETtrack'],
+                scheme: 'GETtrack'
+            },
+            GETallTracks: {
+                name: 'GETallTracks',
+                route: this.GETallTracks,
+                models: ['GETallTracks'],
+                scheme: 'GETallTracks'
+            },
+            GETuserTracks: {
+                name: 'GETuserTracks',
+                route: this.GETuserTracks,
+                models: ['GETuserTracks'],
+                scheme: 'GETuserTracks'
+            },
+            CREATEtrack: {
+                name: 'CREATEtrack',
+                route: this.CREATEtrack,
+                models: ['CREATEtrack'],
+                scheme: 'CREATEtrack'
+            },
+            SAVEtrack: {
+                name: 'SAVEtrack',
+                route: this.SAVEtrack,
+                models: ['SAVEtrack'],
+                scheme: 'SAVEtrack'
+            },
+            DELETEtrack: {
+                name: 'DELETEtrack',
+                route: this.DELETEtrack,
+                models: ['DELETEtrack'],
+                scheme: 'DELETEtrack'
+            },
+            PAYtracks: {
+                name: 'PAYtracks',
+                route: this.PAYtracks,
+                models: ['PAYtracks'],
+                scheme: 'PAYtracks'
+            },
+            CLOSEtracks: {
+                name: 'CLOSEtracks',
+                route: this.CLOSEtracks,
+                models: ['CLOSEtracks'],
+                scheme: 'CLOSEtracks'
+            },
+            ARCHIVEtracks: {
+                name: 'ARCHIVEtracks',
+                route: this.ARCHIVEtracks,
+                models: ['ARCHIVEtracks'],
+                scheme: 'ARCHIVEtracks'
             }
         }
     }
 
     /**
      * Retrieves a list of tracking items from the database based on requested query
-     * @request reqdata = query = { property: value }
-     * @returns {resdata: Array} list of Tracks
+     * @request { data: Array } query = { property: value }
+     * @returns { data: Array } list of Tracks
      */
-    QUERYtracks = (handler,server) => {
+    QUERYtracks = (handler, server) => {
         return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let query = handler.reqdata;
-            console.log("SERVER > ",server);
+            console.log("SERVER > ", server);
             console.log("Handler >", handler);
             /*
             let resp = await server.services.store.request({
@@ -59,16 +112,16 @@ module.exports = class TrackingController {
             handler.respack.errors = resp.errors;
             handler.respack.msg = handler.respack.success ? 'Tracks retrieved' : 'Tracks NOT retrieved';
 
-            return resolve(handler);
+            return resolve(respack);
         })
     }
 
     /**
      * Retrieves a single Track doc/object from the database
-     * @request reqdata = Track object / id ?
-     * @returns {resdata: Object} Track object
+     * @request { data: Object } Track object / id ?
+     * @returns { data: Object } Track object
      */
-    GETtrack = (handler,server) => {
+    GETtrack = (handler, server) => {
         return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let idTOfind = handler.pack.reqdata.id;
@@ -85,16 +138,16 @@ module.exports = class TrackingController {
             handler.pack.errors = resp.errors;
             handler.pack.msg = handler.pack.success ? 'Track retrieved' : 'Track NOT retrieved';
 
-            return resolve(handler)
+            return resolve(respack)
         })
     }
 
     /**
-     * Retrieves list of tracking items from the database
-     * @request none
-     * @returns {resdata: Array} list of Tracks
+     * Retrieves a list of tracking items from the database
+     * @request { data: null }
+     * @returns { data: Array } list of Tracks
      */
-    GETallTracks = (handler,server) => {
+    GETallTracks = (handler, server) => {
         return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let resp = await handler.services.mart({
@@ -108,16 +161,16 @@ module.exports = class TrackingController {
             handler.pack.errors = resp.errors;
             handler.pack.msg = handler.pack.success ? 'Tracks retrieved' : 'Tracks NOT retrieved';
 
-            return resolve(handler);
+            return resolve(respack);
         })
     }
 
     /**
      * Retrieves a list of the CURRENT USER's tracking items from the database
      * @request User's Creds ?
-     * @returns {resdata: Array} list of Tracks
+     * @returns { data: Array } list of Tracks
      */
-    GETuserTracks = (handler) => {
+    GETuserTracks = (handler, server) => {
         return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let username = handler.username;  // Pass via reqdata, handler itself, etc?
@@ -132,17 +185,17 @@ module.exports = class TrackingController {
             handler.pack.errors = resp.errors;
             handler.pack.msg = handler.pack.success ? 'Tracks retrieved' : 'Tracks NOT retrieved';
 
-            return resolve(handler);
+            return resolve(respack);
         })
     }
 
     /**
-     * Creates a new Track using "shell" info
+     * Creates a new Track using model-provided object
      *   Model to handle data structure, dates, user info / estimator
-     * @request reqdata = Track object = { id: String, projectname: String, ...}
-     * @returns {resdata: Object} new Track object
+     * @request { data: Object } Track object = { id: String, projectname: String, ...}
+     * @returns { data: Object } new Track object
      */
-    CREATEtrack = (handler) => {
+    CREATEtrack = (handler, server) => {
         return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let tobj = handler.pack.reqdata;
@@ -157,19 +210,19 @@ module.exports = class TrackingController {
             handler.pack.errors = resp.errors;
             handler.pack.msg = handler.pack.success ? 'Tracking item created' : 'Tracking item NOT created';
 
-            return resolve(handler);
+            return resolve(respack);
         })
     }
 
     /**
      * Saves a Track to the database
-     * @require reqdata = Track object to be saved/updated
-     * @returns {resdata: Object} updated Track object
+     * @require { data: Object } Track object to be saved/updated
+     * @returns { data: Object } updated Track object
      *    Update lastdate to current date (?)
      *    Update DB doc with new object info
      *    Return updated Track object
      */
-    SAVEtrack = (handler) => {
+    SAVEtrack = (handler, server) => {
         return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let tobj = handler.pack.reqdata;
@@ -187,16 +240,16 @@ module.exports = class TrackingController {
             handler.pack.errors = resp.errors;
             handler.pack.msg = handler.pack.success ? 'Tracking item saved' : 'Tracking item NOT saved';
 
-            return resolve(handler);
+            return resolve(respack);
         })
     }
 
     /**
      * Deletes a Track from the database
-     * @require reqdata = Track ID
-     * @returns {resdata: null}
+     * @require { data: Object } Track object / ID ?
+     * @returns { data: null }
      */
-    DELETEtrack = (handler) => {
+    DELETEtrack = (handler, server) => {
         return new Promise(async (resolve, reject) => {
             let collection = 'Tracking350';
             let tid = handler.pack.reqdata;
@@ -213,7 +266,7 @@ module.exports = class TrackingController {
             handler.pack.errors = resp.errors;
             handler.pack.msg = handler.pack.success ? 'Tracking item deleted' : 'Tracking item NOT deleted';
 
-            return resolve(handler);
+            return resolve(respack);
         })
     }
 
@@ -227,46 +280,49 @@ module.exports = class TrackingController {
 
     /**
      * Marks track items as "to be paid"
-     * @returns
+     * @require { data: null }
+     * @returns { data: Array } list of Tracks to be confirmed
      */
-    PAYtracks = (handler) => {
+    PAYtracks = (handler, server) => {
         return new Promise(async (resolve, reject) => {
             // Get list from DB (per CONS, one CONS, etc?) / Get list from application (user checks off what they want)
             // Validate list (check for basic "can be paid" flags)
             // Change STATUS
             // Save list back to DB
             // Return stats (number approved, number rejected, why, etc.)
-            return resolve(handler);
+            return resolve(respack);
         })
     }
 
     /**
      * Closes out track items
      * Handles split between "to be paid" and "not to be paid"
-     * @returns
+     * @require { data: Array } list of Tracks
+     * @returns { data: null }
      */
-    CLOSEtracks = (handler) => {
+    CLOSEtracks = (handler, server) => {
         return new Promise(async (resolve, reject) => {
             // Pull basic list from application (manager should have final approved/denied)
             // Change STATUS
             // Save list back to DB
             // Return stats (number approved, number rejected, etc.)
-            return resolve(handler);
+            return resolve(respack);
         })
     }
 
     /**
      * Performs final archival process for tracks once closed and confirmed
-     * @returns
+     * @require { data: Array } list of Tracks
+     * @returns { data: null }
      */
-    ARCHIVEtracks = (handler) => {
+    ARCHIVEtracks = (handler, server) => {
         return new Promise(async (resolve, reject) => {
             // Get list from DB (use search for "closed"?)
             // Change STATUS
             // Change STAGE
             // Update DB doc
             // Relocate to "archive" DB?
-            return resolve(handler);
+            return resolve(respack);
         })
     }
 }
