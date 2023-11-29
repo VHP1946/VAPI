@@ -22,12 +22,8 @@
   "bugs": {
     "url": "https://github.com/VHP1946/VAPI/issues"
   },
-<<<<<<< HEAD
-  "homepage": "https://github.com/VHP1946/VAPI#readme"
-=======
   "homepage": "https://github.com/VHP1946/VAPI#readme",
   "dependencies": {
     "vapi-core-server": "^0.0.4"
   }
->>>>>>> 5423322352d049f1197385d7665db53649a20423
 }
