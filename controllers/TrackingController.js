@@ -102,23 +102,23 @@ module.exports = class TrackingController {
                 }
             };
             let respack = {
-                success: false,
-                data: null,
+                success: true,
+                data: handler.reqpack.pack.data,
                 errors: [],
-                msg: ''
+                msg: 'TESTING'
             }
             //console.log("SERVER > ", server);
             //console.log("Handler >", handler);
 
-            //let resp = await server.services.store.request(pack);
-            
             console.log('reqdata', handler.reqpack.pack.data)
 
-            let resp = {};
+            /*
+            let resp = await server.services.store.request(pack);
             respack.success = resp.success;
             respack.data = resp.data;
             respack.errors = resp.errors;
             respack.msg = respack.success ? 'Tracks retrieved' : 'Tracks NOT retrieved';
+            */
 
             return resolve(respack);
         })
@@ -131,11 +131,17 @@ module.exports = class TrackingController {
      */
     GETtrack = (handler, server) => {
         return new Promise(async (resolve, reject) => {
-            let collection = 'Tracking350';
-            let idTOfind = handler.pack.reqdata.id;
+            let idTOfind = handler.reqpack.pack.data.id;
+            let respack = {
+                success: true,
+                data: handler.reqpack.pack.data,
+                errors: [],
+                msg: 'TESTING'
+            }
+            /*
             let resp = await handler.services.mart({
                 db: 'Replacement',
-                collect: collection,
+                collect: 'Tracking350',
                 method: 'QUERY',
                 options: {
                     query: { id: idTOfind }
@@ -145,7 +151,8 @@ module.exports = class TrackingController {
             handler.pack.resdata = resp.data[0];
             handler.pack.errors = resp.errors;
             handler.pack.msg = handler.pack.success ? 'Track retrieved' : 'Track NOT retrieved';
-
+            */
+            
             return resolve(respack)
         })
     }

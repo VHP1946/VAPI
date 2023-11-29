@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/VHP1946/VAPI#readme",
   "dependencies": {
-    "vapi-core-server": "^0.0.3"
+    "vapi-core-server": "^0.0.4"
   }
 }

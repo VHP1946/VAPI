@@ -14,8 +14,30 @@
             }
         },
         "response": {
-            "default": {},
+            "default": {
+                "property": "value"
+            },
             "test": {}
+        }
+    },
+    "GETtrack": {
+        "request": {
+            "default": {
+                "data": {
+                    "id": "value"
+                }
+            },
+            "test": {
+                "data": {
+                    "id": ""
+                }
+
+            }
+        },
+        "response": {
+            "default": {
+                "id": "value"
+            }
         }
     }
 }
