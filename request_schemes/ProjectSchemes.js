@@ -1,6 +1,25 @@
+let customer = {
+    id: { type: String, default: undefined, msg: "The client's ID CODE (JONAS)" },
+    name: { type: String, default: undefined, msg: 'The FULL NAME of the client' },
+    fname: { type: String, default: undefined, msg: 'The FIRST NAME of the client' },
+    lname: { type: String, default: undefined, msg: 'The LAST NAME of the client' },
+    street: { type: String, default: undefined, msg: 'The STREET ADDRESS of the client' },
+    unit: { type: String, default: undefined, msg: 'The UNIT NUMBER of the client' },
+    city: { type: String, default: undefined, msg: 'The CITY NAME of the client' },
+    state: { type: String, default: undefined, msg: 'The STATE CODE of the client' },
+    zip: { type: String, default: undefined, msg: 'The ZIP CODE of the client' },
+    strtdate: { type: Date, default: undefined, msg: 'The FIRST DATE of interaction with the client' },
+    lastsale: { type: Date, default: undefined, msg: 'The LAST DATE that the client was provided a service' },
+    type: { type: String, default: undefined, msg: 'The TYPE of client' },
+    phone: { type: String, default: undefined, msg: 'The PHONE NUMBER of the client' },
+    phone2: { type: String, default: undefined, msg: 'The SECONDARY PHONE NUMBER for the client' },
+    email: { type: String, default: undefined, msg: 'The EMAIL ADDRESS of the client' },
+    rep: { type: String, default: undefined, msg: "The client's SALES REPRESENTATIVE'S CODE" }
+}
+
 module.exports = {
-    GETproject: {
-        name: 'GETproject',
+    project: {
+        name: 'Project',
         strict: false,
         scheme: {
             id: { type: String, default: undefined, msg: 'The ID of the Project' },
@@ -14,7 +33,7 @@ module.exports = {
             zip: { type: String, default: undefined, msg: 'The ZIP CODE of the Project' },
 
             custid: { type: String, default: undefined, msg: "The client's ID CODE (JONAS)" },
-            customer: { type: Object, default: undefined, msg: 'The CLIENT INFO for the Project' },
+            customer: { type: Object, nest: customer, default: undefined, msg: 'The CLIENT INFO for the Project' },
             estimator: { type: String, default: undefined, msg: 'The ESTIMATOR on the Project' },
 
             dept: { type: String, default: undefined, msg: 'The DEPARTMENT CODE' },
@@ -35,23 +54,4 @@ module.exports = {
             froot: { type: String, default: undefined, msg: "The PROJECT FOLDER's path on the fileserver" },
         }
     }
-}
-
-customer = {
-    id: { type: String, default: undefined, msg: "The client's ID CODE (JONAS)" },
-    name: { type: String, default: undefined, msg: 'The FULL NAME of the client' },
-    fname: { type: String, default: undefined, msg: 'The FIRST NAME of the client' },
-    lname: { type: String, default: undefined, msg: 'The LAST NAME of the client' },
-    street: { type: String, default: undefined, msg: 'The STREET ADDRESS of the client' },
-    unit: { type: String, default: undefined, msg: 'The UNIT NUMBER of the client' },
-    city: { type: String, default: undefined, msg: 'The CITY NAME of the client' },
-    state: { type: String, default: undefined, msg: 'The STATE CODE of the client' },
-    zip: { type: String, default: undefined, msg: 'The ZIP CODE of the client' },
-    strtdate: { type: Date, default: undefined, msg: 'The FIRST DATE of interaction with the client' },
-    lastsale: { type: Date, default: undefined, msg: 'The LAST DATE that the client was provided a service' },
-    type: { type: String, default: undefined, msg: 'The TYPE of client' },
-    phone: { type: String, default: undefined, msg: 'The PHONE NUMBER of the client' },
-    phone2: { type: String, default: undefined, msg: 'The SECONDARY PHONE NUMBER for the client' },
-    email: { type: String, default: undefined, msg: 'The EMAIL ADDRESS of the client' },
-    rep: { type: String, default: undefined, msg: "The client's SALES REPRESENTATIVE'S CODE" }
 }

@@ -12,7 +12,7 @@ for (let m in modules) {
         modules[m][r] = r;
     }
 }
-console.log('Modules are setup >\n', modules);
+console.log('Request packs set up >\n', modules);
 
 
 /**

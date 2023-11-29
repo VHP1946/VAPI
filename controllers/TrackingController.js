@@ -18,6 +18,7 @@
  *
  */
 
+
 module.exports = class TrackingController {
     constructor(lib) {
         this.tools = lib;
@@ -27,61 +28,61 @@ module.exports = class TrackingController {
                 name: 'QUERYtracks',
                 route: this.QUERYtracks,
                 models: ['QUERYtracks'],
-                scheme: 'QUERYtracks'
+                scheme: 'tracks'
             },
             GETtrack: {
                 name: 'GETtrack',
                 route: this.GETtrack,
                 models: ['GETtrack'],
-                scheme: 'GETtrack'
+                scheme: 'tracks'
             },
             GETallTracks: {
                 name: 'GETallTracks',
                 route: this.GETallTracks,
                 models: ['GETallTracks'],
-                scheme: 'GETallTracks'
+                scheme: 'tracks'
             },
             GETuserTracks: {
                 name: 'GETuserTracks',
                 route: this.GETuserTracks,
                 models: ['GETuserTracks'],
-                scheme: 'GETuserTracks'
+                scheme: 'tracks'
             },
             CREATEtrack: {
                 name: 'CREATEtrack',
                 route: this.CREATEtrack,
                 models: ['CREATEtrack'],
-                scheme: 'CREATEtrack'
+                scheme: 'tracks'
             },
             SAVEtrack: {
                 name: 'SAVEtrack',
                 route: this.SAVEtrack,
                 models: ['SAVEtrack'],
-                scheme: 'SAVEtrack'
+                scheme: 'tracks'
             },
             DELETEtrack: {
                 name: 'DELETEtrack',
                 route: this.DELETEtrack,
                 models: ['DELETEtrack'],
-                scheme: 'DELETEtrack'
+                scheme: 'tracks'
             },
             PAYtracks: {
                 name: 'PAYtracks',
                 route: this.PAYtracks,
                 models: ['PAYtracks'],
-                scheme: 'PAYtracks'
+                scheme: 'tracks'
             },
             CLOSEtracks: {
                 name: 'CLOSEtracks',
                 route: this.CLOSEtracks,
                 models: ['CLOSEtracks'],
-                scheme: 'CLOSEtracks'
+                scheme: 'tracks'
             },
             ARCHIVEtracks: {
                 name: 'ARCHIVEtracks',
                 route: this.ARCHIVEtracks,
                 models: ['ARCHIVEtracks'],
-                scheme: 'ARCHIVEtracks'
+                scheme: 'tracks'
             }
         }
     }
@@ -91,8 +92,10 @@ module.exports = class TrackingController {
      * @request { data: Object } query = { property: value, ... }
      * @returns { data: Array } list of Tracks
      */
+
     QUERYtracks = (handler, server) => {
         return new Promise(async (resolve, reject) => {
+            /*
             let pack = {
                 db: 'Replacement',
                 collect: 'Tracking350',
@@ -101,16 +104,14 @@ module.exports = class TrackingController {
                     query: handler.reqpack.pack.data
                 }
             };
+            */
             let respack = {
                 success: true,
-                data: handler.reqpack.pack.data,
+                data: handler.pack.pack.data,
                 errors: [],
                 msg: 'TESTING'
             }
-            //console.log("SERVER > ", server);
-            //console.log("Handler >", handler);
-
-            console.log('reqdata', handler.reqpack.pack.data)
+            console.log('reqdata', respack.data)
 
             /*
             let resp = await server.services.store.request(pack);
@@ -131,13 +132,15 @@ module.exports = class TrackingController {
      */
     GETtrack = (handler, server) => {
         return new Promise(async (resolve, reject) => {
-            let idTOfind = handler.reqpack.pack.data.id;
+            //let idTOfind = handler.reqpack.pack.data.id;
             let respack = {
                 success: true,
-                data: handler.reqpack.pack.data,
+                data: handler.pack.pack.data,
                 errors: [],
                 msg: 'TESTING'
             }
+            console.log('reqdata', respack.data)
+            
             /*
             let resp = await handler.services.mart({
                 db: 'Replacement',
