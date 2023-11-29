@@ -1,31 +1,81 @@
 /**
  * Routes to handle interactions with our Support system
- * All responses in { success: Boolean, msg: String, data: ANY, lvl: String }
- */
-
-
-/**
- * Starts up a new email messege to the support team
- * Uses the default email application 
- * @param {*} eve 
- * @param {*} data
- * @req Support Email
- * @returns {data: null}
  * 
- *    Requires electron?
+ * EMAILsupport
+ * SUBMITissue
+ * OPENportal
+ * 
  */
-emailSupport
-    // Gather application info (name, version)
-    // Call OS to start new email 
 
+module.exports = class SupportController {
+    constructor(lib) {
+        this.tools = lib;
 
-/**
- * Opens a new window to the Support Portal 
- * @param {*} eve 
- * @param {*} data
- * @req Support Web Address, Application's Support Web Address?
- * @returns {data: null}
- */
-openPortal
-    // Gather application info (name, version)
-    // Open new window directed at proper address 
+        return {  // export all routes
+            EMAILsupport: {
+                name: 'EMAILsupport',
+                route: this.EMAILsupport,
+                models: ['EMAILsupport'],
+                scheme: 'EMAILsupport'
+            },
+            SUBMITissue: {
+                name: 'SUBMITissue',
+                route: this.SUBMITissue,
+                models: ['SUBMITissue'],
+                scheme: 'SUBMITissue'
+            },
+            OPENportal: {
+                name: 'OPENportal',
+                route: this.OPENportal,
+                models: ['OPENportal'],
+                scheme: 'OPENportal'
+            }
+        }
+    }
+
+    /**
+     * Starts up a new email messege to the support team using the default email client
+     * @requires { data: null }
+     * @internal Support Email Address
+     * @returns { data: null }
+     * 
+     *    Requires electron?
+     */
+    EMAILsupport = (handler, server) => {
+        return new Promise(async (resolve, reject) => {
+            // Gather application info (name, version)
+            // Call OS to start new email 
+            return resolve(respack);
+        })
+    }
+
+    /**
+     * Automatically submits an issue to the support email with Application and Document info
+     * @requires { data: Object } User-submitted info (comments, etc.)
+     * @internal Support Email Address, Application Info, User Email Address
+     * @returns { data: null }
+     */
+    SUBMITissue = (handler, server) => {
+        return new Promise(async (resolve, reject) => {
+            // Gather application info (name, version)
+            // Gather document info ( submitted or pulled ?)
+            // Generate email
+            // Send email
+            return resolve(respack);
+        })
+    }
+
+    /**
+     * Opens a new window to the Support Portal 
+     * @requires { data: null }
+     * @internal Support Web Address, Application's Support Web Address?
+     * @returns { data: null }
+     */
+    OPENportal = (handler, server) => {
+        return new Promise(async (resolve, reject) => {
+            // Gather application info (name, version)
+            // Open new window directed at proper address 
+            return resolve(respack);
+        })
+    }
+}

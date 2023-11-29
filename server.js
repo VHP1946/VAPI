@@ -5,8 +5,8 @@ let core = new CoreServer({
     config: require('./configs/vhp-config.json'),
     type: 'http',
     controllers: {
-        routes:require('./controllers/index.js'),
-        models:require('./models/index.js'),
-        request_schemes:require('./request_schemes/index.js')
+        routes: require('./controllers/index.js'),
+        models: require('./models/index.js'),
+        request_schemes: require('./request_schemes/index.js')
     }
 })

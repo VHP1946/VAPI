@@ -1,19 +1,18 @@
-
+const tools = require('../../tools/vg-gentools.js');
 
 // list of modules -> JSON file
 let modules = {
-    defaults:{},
-    tracking:{}
+    defaults: {},
+    tracking: {}
 }
 
-for(let m in modules){
+for (let m in modules) {
     let mod = require(`./${m}.json`);
-    console.log(mod);
-    for(let r in mod){
+    for (let r in mod) {
         modules[m][r] = r;
     }
 }
-console.log('Modules are setup >\n',modules);
+console.log('Modules are setup >\n', modules);
 
 
 /**
@@ -27,46 +26,57 @@ console.log('Modules are setup >\n',modules);
  * @param {String} route
  * @param {String} type
  */
-const selector = (route,type)=>{
+const selector = (route, type) => {
     let runroute = false;
     let runmod = false
-    for(let m in modules){
-        for(let r in modules[m]){
-            if(r==route){
-                runmod=m
+    for (let m in modules) {
+        for (let r in modules[m]) {
+            if (r == route) {
+                runmod = m
                 runroute = true;
                 break;
             }
         }
     }
-    if(runroute){
+    if (runroute) {
         stashmodule = require(`./${runmod}.json`);
-        try{return stashmodule[route].request[type]}
-        catch(err){console.error(err);return false;}
+        try { return stashmodule[route].request[type] }
+        catch (err) { console.error(err); return false; }
     }
 }
 let stashmodule = null;
 
 const checker = ({
-    module,
     route,
     type,
     response
-})=>{
+}) => {
+    if (!stashmodule[route].response || !stashmodule[route].response[type]) { return { success: true, msg: 'Nothing to check against', data: null } }
+
+    let resdata = stashmodule[route].response[type];
+
+    if (typeof resdata == 'object' && !Array.isArray(resdata)) {                             // if it is an object...
+        if (tools.deepEqual(resdata, response.data)) { return { success: true, msg: 'Passed', data: resdata } }
+    } else if (typeof resdata == 'object' && Array.isArray(resdata)) {                       // if it is an array...
+        if (Array.isArray(response.data)) { return { success: true, msg: 'Passed', data: resdata } }
+    } else if (typeof resdata == 'string') {                                                 // if it is a string...
+        if (resdata == response.data) { return { success: true, msg: 'Passed', data: resdata } }
+    }
+
+    return { success: false, msg: 'Failed', data: resdata };  // returns a false if nothing matches
+
     //compare response to stash module reponse
     //deep equal?
-
-    return true || false //result
 }
 
-const recorder = ({file,route,type,response})=>{
-    if(type!='default'){//don't override default
+const recorder = ({ file, route, type, response }) => {
+    if (type != 'default') {//don't override default
 
     }
     stashmodule = null; //better way to clear
 }
 
-module.exports={
+module.exports = {
     selector,
     checker,
     recorder

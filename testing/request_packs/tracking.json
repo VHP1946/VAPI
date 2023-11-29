@@ -1,28 +1,42 @@
 {
-    "GETtrack":{
-        "request":{
-            "default":{
-                "id": 4
+    "QUERYtracks": {
+        "request": {
+            "default": {
+                "data": {
+                    "property": "value"
+                }
             },
-            "test":{
+            "test": {
+                "data": {
+                    "estimator": "MURRY"
+                }
 
             }
         },
-        "response":{
-            "default":{
-
-                "result":4
-            }
+        "response": {
+            "default": {
+                "property": "value"
+            },
+            "test": {}
         }
     },
-    "QUERYtracks":{
-        "request":{
-            "default":{
-                "id":4
+    "GETtrack": {
+        "request": {
+            "default": {
+                "data": {
+                    "id": "value"
+                }
+            },
+            "test": {
+                "data": {
+                    "id": ""
+                }
+
             }
         },
-        "response":{
-            "default":{
+        "response": {
+            "default": {
+                "id": "value"
             }
         }
     }

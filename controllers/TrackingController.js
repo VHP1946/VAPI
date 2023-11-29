@@ -88,29 +88,37 @@ module.exports = class TrackingController {
 
     /**
      * Retrieves a list of tracking items from the database based on requested query
-     * @request { data: Array } query = { property: value }
+     * @request { data: Object } query = { property: value, ... }
      * @returns { data: Array } list of Tracks
      */
     QUERYtracks = (handler, server) => {
         return new Promise(async (resolve, reject) => {
-            let collection = 'Tracking350';
-            let query = handler.reqdata;
-            console.log("SERVER > ", server);
-            console.log("Handler >", handler);
-            /*
-            let resp = await server.services.store.request({
+            let pack = {
                 db: 'Replacement',
-                collect: collection,
+                collect: 'Tracking350',
                 method: 'QUERY',
                 options: {
-                    query: query
+                    query: handler.reqpack.pack.data
                 }
-            })
+            };
+            let respack = {
+                success: true,
+                data: handler.reqpack.pack.data,
+                errors: [],
+                msg: 'TESTING'
+            }
+            //console.log("SERVER > ", server);
+            //console.log("Handler >", handler);
+
+            console.log('reqdata', handler.reqpack.pack.data)
+
+            /*
+            let resp = await server.services.store.request(pack);
+            respack.success = resp.success;
+            respack.data = resp.data;
+            respack.errors = resp.errors;
+            respack.msg = respack.success ? 'Tracks retrieved' : 'Tracks NOT retrieved';
             */
-            handler.respack.success = resp.success;
-            handler.respack.data = resp.data;
-            handler.respack.errors = resp.errors;
-            handler.respack.msg = handler.respack.success ? 'Tracks retrieved' : 'Tracks NOT retrieved';
 
             return resolve(respack);
         })
@@ -123,11 +131,17 @@ module.exports = class TrackingController {
      */
     GETtrack = (handler, server) => {
         return new Promise(async (resolve, reject) => {
-            let collection = 'Tracking350';
-            let idTOfind = handler.pack.reqdata.id;
+            let idTOfind = handler.reqpack.pack.data.id;
+            let respack = {
+                success: true,
+                data: handler.reqpack.pack.data,
+                errors: [],
+                msg: 'TESTING'
+            }
+            /*
             let resp = await handler.services.mart({
                 db: 'Replacement',
-                collect: collection,
+                collect: 'Tracking350',
                 method: 'QUERY',
                 options: {
                     query: { id: idTOfind }
@@ -137,7 +151,8 @@ module.exports = class TrackingController {
             handler.pack.resdata = resp.data[0];
             handler.pack.errors = resp.errors;
             handler.pack.msg = handler.pack.success ? 'Track retrieved' : 'Track NOT retrieved';
-
+            */
+            
             return resolve(respack)
         })
     }
@@ -167,7 +182,8 @@ module.exports = class TrackingController {
 
     /**
      * Retrieves a list of the CURRENT USER's tracking items from the database
-     * @request User's Creds ?
+     * @request { data: null }
+     * @internal User's Creds
      * @returns { data: Array } list of Tracks
      */
     GETuserTracks = (handler, server) => {
@@ -245,7 +261,7 @@ module.exports = class TrackingController {
     }
 
     /**
-     * Deletes a Track from the database
+     * Deletes a Track object/doc from the database
      * @require { data: Object } Track object / ID ?
      * @returns { data: null }
      */
