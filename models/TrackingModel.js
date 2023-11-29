@@ -4,9 +4,9 @@ module.exports = {
      *
      * with data collects dependant data
      */
-    QUERYtracks: (data, server) => {
+    QUERYtracks: (handler, server) => {
         return new Promise((resolve, reject) => {
-            return resolve(null)
+            return resolve({})
         })
     }
 }
