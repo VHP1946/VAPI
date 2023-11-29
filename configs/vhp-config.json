@@ -28,12 +28,8 @@
 		"STORE":{"name":"STORE","group":"MART","type":"server",
 		"options":{
 			"http":{
-				"hostname":"10.0.1.212",
-				"port":"8080",
-				"method":"POST",
-				"headers":{
-					"Content-Type":"application/json"
-				}
+				"host":"www.google.com",
+				"method":"GET"
 			}
 		}},
 		"OLDSTORE":{"name":"OLDSTORE","group":"MART","type":"server",
