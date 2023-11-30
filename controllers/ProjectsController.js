@@ -109,8 +109,25 @@ module.exports = class ProjectsController {
                 route: this.UPDATEprojectID,
                 models: ['UPDATEprojectID'],
                 scheme: 'UPDATEprojectID'
+            },
+            testdeep: {
+                name: 'testdeep',
+                route: this.testdeep,
+                models: [],
+                scheme: 'testDeep'
             }
         }
+    }
+    
+
+    testdeep = (handler, server) => {
+        return new Promise(async (resolve, reject) => {
+
+            let response = this.tools.aresponse(handler);
+
+            response.data.respack.data = handler.pack.pack.data;
+            return resolve(response)
+        })
     }
 
     /**

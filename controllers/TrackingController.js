@@ -35,13 +35,13 @@ module.exports = class TrackingController {
                 name: 'GETtrack',
                 route: this.GETtrack,
                 models: ['GETtrack'],
-                scheme: 'GETtrack'
+                scheme: 'REQid'
             },
             GETallTracks: {
                 name: 'GETallTracks',
                 route: this.GETallTracks,
                 models: ['GETallTracks'],
-                scheme: 'GETallTracks'
+                scheme: 'REQnone'
             },
             GETuserTracks: {
                 name: 'GETuserTracks',
@@ -65,7 +65,7 @@ module.exports = class TrackingController {
                 name: 'DELETEtrack',
                 route: this.DELETEtrack,
                 models: ['DELETEtrack'],
-                scheme: 'tracks'
+                scheme: 'REQid'
             },
             PAYtracks: {
                 name: 'PAYtracks',

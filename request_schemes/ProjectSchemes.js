@@ -61,6 +61,19 @@ let projectscheme = {
  */
 
 module.exports = {
+    testDeep: {
+        name: 'Deep Test',
+        strict: true,
+        scheme: {
+            estimator: { ...projectscheme.estimator, default: 'NEED' },
+            customer: {
+                ...projectscheme.customer,
+                scheme: {
+                    name: { ...customerscheme.name, default: 'NEED' }
+                }
+            }
+        }
+    },
     project: {
         name: 'Project',
         strict: false,

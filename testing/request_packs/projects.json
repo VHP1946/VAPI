@@ -1,4 +1,43 @@
 {
+    "testdeep": {
+        "request": {
+            "default": {
+                "data": {
+                    "estimator": "MURRY",
+                    "customer": {
+                        "name": "Murphy"
+                    }
+                }
+            },
+            "toomuch": {
+                "data": {
+                    "estimator": "MURRY",
+                    "customer": {
+                        "name": "Murphy",
+                        "size": "Large"
+                    }
+                }
+            },
+            "toolittle": {
+                "data": {
+                    "estimator": "MURRY"
+                }
+            },
+            "badtype": {
+                "data": {
+                    "estimator": {
+                        "estimator": "MURRY"
+                    },
+                    "customer": {
+                        "name": [
+                            "Ryan",
+                            "Murphy"
+                        ]
+                    }
+                }
+            }
+        }
+    },
     "QUERYprojects": {
         "request": {
             "default": {
@@ -30,12 +69,24 @@
         "request": {
             "default": {
                 "data": {
-                    "id": "value"
+                    "id": "RRQ-10101010"
                 }
             },
-            "test": {
+            "toomuch": {
                 "data": {
-                    "id": ""
+                    "id": "RRQ-10101010",
+                    "estimator": "MURRY"
+                }
+            },
+            "toolittle": {
+                "data": {}
+            },
+            "badtype": {
+                "data": {
+                    "id": [
+                        "RRQ-10101010",
+                        "RRQ-10101011"
+                    ]
                 }
             }
         },

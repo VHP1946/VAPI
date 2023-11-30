@@ -44,22 +44,30 @@ module.exports = {
         strict: false,
         scheme: trackscheme
     },
-    QUERYtracks: {  // allow any property(s) that exist in the scheme, do not allow adds
-        name: 'Query Tracks',
-        strict: true,
-        scheme: trackscheme
-    },
-    GETtrack: {  // do not allow extra properties, requires ID
-        name: 'Get Track',
+    /**
+     * Do not allow extra properties; ID property required
+     * @usedby GETtrack, DELETEtrack
+     */
+    REQid: {
+        name: 'Requires ID',
         strict: true,
         scheme: {
             id: { ...trackscheme.id, default: 'NEED' }
         }
     },
-    GETallTracks: {   // do not allow extras, nothing required
-        name: 'Get All Tracks',
+    /**
+     * Do not allow extra properties; nothing is required
+     * @usedby GETallTracks
+     */
+    REQnone: {
+        name: 'Requires Nothing',
         strict: true,
         scheme: {}
+    },
+    QUERYtracks: {  // allow any property(s) that exist in the scheme, do not allow adds
+        name: 'Query Tracks',
+        strict: true,
+        scheme: trackscheme
     },
     GETuserTracks: {  // do not allow extra properties, requires estimator
         name: 'Get User Tracks',
@@ -67,5 +75,30 @@ module.exports = {
         scheme: {
             estimator: { ...trackscheme.estimator, default: 'NEED' }
         }
+    },
+    CREATEtrack:{
+        name: 'Create Track',
+        strict: true,
+        scheme: {}
+    },
+    SAVEtrack:{
+        name: 'Save Track',
+        strict: true,
+        scheme: {}
+    },
+    PAYtracks:{
+        name: 'Pay Tracks',
+        strict: true,
+        scheme: {}
+    },
+    CLOSEtracks:{
+        name: 'Close Tracks',
+        strict: true,
+        scheme: {}
+    },
+    ARCHIVEtracks:{
+        name: 'Archive Tracks',
+        strict: true,
+        scheme: {}
     }
 }
