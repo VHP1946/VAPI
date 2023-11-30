@@ -1,16 +1,24 @@
 {
-    "QUERYtracks": {
+    "GETuserTracks": {
         "request": {
             "default": {
                 "data": {
-                    "property": "value"
-                }
-            },
-            "test": {
-                "data": {
                     "estimator": "MURRY"
                 }
-
+            },
+            "toomuch": {
+                "data": {
+                    "id": "RRT-1020202",
+                    "estimator": "MURRY"
+                }
+            },
+            "toolittle": {
+                "data": {}
+            },
+            "badtype": {
+                "data": {
+                    "estimator": { "estimator": "MURRY" }
+                }
             }
         },
         "response": {
@@ -31,7 +39,6 @@
                 "data": {
                     "id": ""
                 }
-
             }
         },
         "response": {

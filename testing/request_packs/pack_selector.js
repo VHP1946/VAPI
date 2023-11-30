@@ -3,6 +3,7 @@ const tools = require('../../tools/vg-gentools.js');
 // list of modules -> JSON file
 let modules = {
     defaults: {},
+    projects: {},
     tracking: {}
 }
 

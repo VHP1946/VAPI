@@ -1,0 +1,108 @@
+{
+    "QUERYprojects": {
+        "request": {
+            "default": {
+                "data": {
+                    "estimator": "MURRY",
+                    "dept": "350"
+                }
+            },
+            "toomuch": {
+                "data": {
+                    "badprop": "MURRY",
+                    "estimator": "MURRY",
+                    "dept": "350"
+                }
+            },
+            "toolittle": {
+                "data": {}
+            },
+            "badtype": {
+                "data": {
+                    "estimator": {
+                        "estimator": "MURRY"
+                    }
+                }
+            }
+        }
+    },
+    "GETproject": {
+        "request": {
+            "default": {
+                "data": {
+                    "id": "value"
+                }
+            },
+            "test": {
+                "data": {
+                    "id": ""
+                }
+            }
+        },
+        "response": {
+            "default": {
+                "id": "value"
+            }
+        }
+    },
+    "GETallProjects": {
+        "request": {
+            "default": {
+                "data": {}
+            },
+            "toomuch": {
+                "data": {
+                    "id": "RRT-1020202",
+                    "estimator": "MURRY"
+                }
+            },
+            "toolittle": {
+                "data": {}
+            },
+            "badtype": {
+                "data": {
+                    "estimator": {
+                        "estimator": "MURRY"
+                    }
+                }
+            }
+        },
+        "response": {
+            "default": {
+                "property": "value"
+            },
+            "test": {}
+        }
+    },
+    "GETuserProjects": {
+        "request": {
+            "default": {
+                "data": {
+                    "estimator": "MURRY"
+                }
+            },
+            "toomuch": {
+                "data": {
+                    "id": "RRT-1020202",
+                    "estimator": "MURRY"
+                }
+            },
+            "toolittle": {
+                "data": {}
+            },
+            "badtype": {
+                "data": {
+                    "estimator": {
+                        "estimator": "MURRY"
+                    }
+                }
+            }
+        },
+        "response": {
+            "default": {
+                "property": "value"
+            },
+            "test": {}
+        }
+    }
+}

@@ -47,6 +47,7 @@ let askForType = (question = 'What Request Type? -> ') => {
     })
 }
 
+
 let RUNroute = (question = 'Run which route? -> ') => {
     rl.question(question, answrRoute => {
 
@@ -59,13 +60,13 @@ let RUNroute = (question = 'Run which route? -> ') => {
                     pack: req
                 }).then(response => {
                     console.log('\n\nResponse >', response)
-                    
+                    /*
                     let check = modules.checker({ route: answrRoute, type: answrType, response: response });
                     if (!check.success){
                         console.log('Expected >', check.data);
                     }
                     console.log('Check >', check.msg, '\n\n');
-                    
+                    */
                     RUNroute()
                 })
             } else {

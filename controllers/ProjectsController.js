@@ -30,7 +30,7 @@ module.exports = class ProjectsController {
                 name: 'QUERYprojects',
                 route: this.QUERYprojects,
                 models: ['QUERYprojects'],
-                scheme: 'QUERYprojects'
+                scheme: 'projects'
             },
             GETproject: {
                 name: 'GETproject',
@@ -121,7 +121,10 @@ module.exports = class ProjectsController {
     QUERYprojects = (handler, server) => {
         return new Promise(async (resolve, reject) => {
 
-            return resolve(respack);
+            let response = this.tools.aresponse(handler);
+
+            response.data.respack.data = handler.pack.pack.data;
+            return resolve(response)
         })
     }
 
@@ -134,7 +137,10 @@ module.exports = class ProjectsController {
         return new Promise(async (resolve, reject) => {
             // Query DB based on needs
             // Return result
-            return resolve(respack);
+            let response = this.tools.aresponse(handler);
+
+            response.data.respack.data = handler.pack.pack.data;
+            return resolve(response)
         })
     }
 
@@ -147,7 +153,10 @@ module.exports = class ProjectsController {
         return new Promise(async (resolve, reject) => {
             // Query DB based on needs
             // Return result
-            return resolve(respack);
+            let response = this.tools.aresponse(handler);
+
+            response.data.respack.data = handler.pack.pack.data;
+            return resolve(response)
         })
     }
 
@@ -161,7 +170,10 @@ module.exports = class ProjectsController {
         return new Promise(async (resolve, reject) => {
             // Query DB based on needs
             // Return results
-            return resolve(respack);
+            let response = this.tools.aresponse(handler);
+
+            response.data.respack.data = handler.pack.pack.data;
+            return resolve(response)
         })
     }
 

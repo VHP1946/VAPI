@@ -19,6 +19,7 @@
  */
 
 
+
 module.exports = class TrackingController {
     constructor(lib) {
         this.tools = lib;
@@ -28,25 +29,25 @@ module.exports = class TrackingController {
                 name: 'QUERYtracks',
                 route: this.QUERYtracks,
                 models: ['QUERYtracks'],
-                scheme: 'tracks'
+                scheme: 'QUERYtracks'
             },
             GETtrack: {
                 name: 'GETtrack',
                 route: this.GETtrack,
                 models: ['GETtrack'],
-                scheme: 'tracks'
+                scheme: 'GETtrack'
             },
             GETallTracks: {
                 name: 'GETallTracks',
                 route: this.GETallTracks,
                 models: ['GETallTracks'],
-                scheme: 'tracks'
+                scheme: 'GETallTracks'
             },
             GETuserTracks: {
                 name: 'GETuserTracks',
                 route: this.GETuserTracks,
                 models: ['GETuserTracks'],
-                scheme: 'tracks'
+                scheme: 'GETuserTracks'
             },
             CREATEtrack: {
                 name: 'CREATEtrack',
@@ -105,13 +106,10 @@ module.exports = class TrackingController {
                 }
             };
             */
-            let respack = {
-                success: true,
-                data: handler.pack.pack.data,
-                errors: [],
-                msg: 'TESTING'
-            }
-            console.log('reqdata', respack.data)
+            let response = this.tools.aresponse(handler);
+            response.data.respack.data = handler.pack.pack.data;
+
+            //console.log('reqdata', respack.data);
 
             /*
             let resp = await server.services.store.request(pack);
@@ -121,7 +119,7 @@ module.exports = class TrackingController {
             respack.msg = respack.success ? 'Tracks retrieved' : 'Tracks NOT retrieved';
             */
 
-            return resolve(respack);
+            return resolve(response);
         })
     }
 
@@ -132,16 +130,8 @@ module.exports = class TrackingController {
      */
     GETtrack = (handler, server) => {
         return new Promise(async (resolve, reject) => {
-            //let idTOfind = handler.reqpack.pack.data.id;
-            let respack = {
-                success: true,
-                data: handler.pack.pack.data,
-                errors: [],
-                msg: 'TESTING'
-            }
-            console.log('reqdata', respack.data)
-            
             /*
+            let idTOfind = handler.reqpack.pack.data.id;
             let resp = await handler.services.mart({
                 db: 'Replacement',
                 collect: 'Tracking350',
@@ -155,8 +145,11 @@ module.exports = class TrackingController {
             handler.pack.errors = resp.errors;
             handler.pack.msg = handler.pack.success ? 'Track retrieved' : 'Track NOT retrieved';
             */
-            
-            return resolve(respack)
+
+            let response = this.tools.aresponse(handler);
+
+            response.data.respack.data = handler.pack.pack.data;
+            return resolve(response)
         })
     }
 
@@ -191,20 +184,9 @@ module.exports = class TrackingController {
      */
     GETuserTracks = (handler, server) => {
         return new Promise(async (resolve, reject) => {
-            let collection = 'Tracking350';
-            let username = handler.username;  // Pass via reqdata, handler itself, etc?
-            let resp = await handler.services.mart({
-                db: 'Replacement',
-                collect: collection,
-                method: 'QUERY',
-                options: { query: { estimator: username } }
-            });
-            handler.pack.success = resp.success;
-            handler.pack.resdata = resp.data;
-            handler.pack.errors = resp.errors;
-            handler.pack.msg = handler.pack.success ? 'Tracks retrieved' : 'Tracks NOT retrieved';
-
-            return resolve(respack);
+            let response = this.tools.aresponse(handler);
+            response.data.respack.data = handler.pack.pack.data;
+            return resolve(response)
         })
     }
 
