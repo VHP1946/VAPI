@@ -4,8 +4,8 @@ const CoreServer = require('vapi-core-server');
 let core = new CoreServer({
     config: require('./configs/vhp-config.json'),
     type: 'http',
-    controllers: {
-        routes: require('./controllers/index.js'),
+    controls: {
+        controllers: require('./controllers/index.js'),
         models: require('./models/index.js'),
         request_schemes: require('./request_schemes/index.js')
     }

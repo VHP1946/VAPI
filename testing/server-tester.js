@@ -56,8 +56,9 @@ let RUNroute = (question = 'Run which route? -> ') => {
             if (req) {
                 //console.log('Request >',answrRoute)
                 runner.SENDrequest({
+                    url: 'http://localhost:5000/' + 'api/' + answrRoute,
                     route: answrRoute,
-                    pack: req
+                    body: req
                 }).then(response => {
                     console.log('\n\nResponse >', response)
                     /*

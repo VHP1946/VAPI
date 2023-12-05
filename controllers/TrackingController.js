@@ -19,7 +19,6 @@
  */
 
 
-
 module.exports = class TrackingController {
     constructor(lib) {
         this.tools = lib;
@@ -107,7 +106,6 @@ module.exports = class TrackingController {
             };
             */
             let response = this.tools.aresponse(handler);
-            response.data.respack.data = handler.pack.pack.data;
 
             //console.log('reqdata', respack.data);
 
@@ -128,6 +126,7 @@ module.exports = class TrackingController {
      * @request { data: Object } Track object / id ?
      * @returns { data: Object } Track object
      */
+
     GETtrack = (handler, server) => {
         return new Promise(async (resolve, reject) => {
             /*
@@ -148,7 +147,6 @@ module.exports = class TrackingController {
 
             let response = this.tools.aresponse(handler);
 
-            response.data.respack.data = handler.pack.pack.data;
             return resolve(response)
         })
     }

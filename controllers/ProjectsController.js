@@ -118,14 +118,12 @@ module.exports = class ProjectsController {
             }
         }
     }
-    
 
     testdeep = (handler, server) => {
         return new Promise(async (resolve, reject) => {
 
             let response = this.tools.aresponse(handler);
 
-            response.data.respack.data = handler.pack.pack.data;
             return resolve(response)
         })
     }
@@ -140,7 +138,6 @@ module.exports = class ProjectsController {
 
             let response = this.tools.aresponse(handler);
 
-            response.data.respack.data = handler.pack.pack.data;
             return resolve(response)
         })
     }
@@ -156,7 +153,6 @@ module.exports = class ProjectsController {
             // Return result
             let response = this.tools.aresponse(handler);
 
-            response.data.respack.data = handler.pack.pack.data;
             return resolve(response)
         })
     }
@@ -172,7 +168,6 @@ module.exports = class ProjectsController {
             // Return result
             let response = this.tools.aresponse(handler);
 
-            response.data.respack.data = handler.pack.pack.data;
             return resolve(response)
         })
     }
@@ -189,7 +184,6 @@ module.exports = class ProjectsController {
             // Return results
             let response = this.tools.aresponse(handler);
 
-            response.data.respack.data = handler.pack.pack.data;
             return resolve(response)
         })
     }
