@@ -1,3 +1,44 @@
+/* SCHEME NOTES
+
+    As im seeing you play around with the schemes, there is a part that i was having trouble
+    explaining on nested schemes.
+
+    You have the customer scheme built, great. *This would eventually make its way to a different
+    file for use across scheme files. Then you as you are putting together the project with the
+    customer in it, you are declaring another property of scheme? My thought was customer would
+    have in it nested scheme properties like this
+
+
+    let projectscheme = {
+        id: { type: 'String', default: undefined, desc: 'The ID of the Project' },
+        ref: { type: 'Array', default: undefined, desc: 'QUOTE ID once the Quote becomes a Job' },
+        name: { type: 'String', default: undefined, desc: 'The NAME of the Project' },
+
+        customer: {
+            id:{...customerscheme.id,default:'BLAH'}
+            fname:{...customerscheme.fname,default:'BLAH'}
+            lname:{...customerscheme.lname,default:'BLAH'}
+        }
+    }
+
+    Im see some issues with identify when to "step down". I guess you could begin by declaring a _scheme
+    property
+
+        customer: {
+            _scheme:true
+            id:{...customerscheme.id,default:'BLAH'}
+            fname:{...customerscheme.fname,default:'BLAH'}
+            lname:{...customerscheme.lname,default:'BLAH'}
+        }
+    }
+    the validation loop would check for _scheme, and then step down. After that the function would
+    just resolve itself consistently through structure. Im not sure how this effects your 'flattener'.
+
+    This isn't something to do now, but it is a bit akward to create nested schemes so lets put this
+    on the maintenance schedule.
+
+*/
+
 let customerscheme = {
     id: { type: 'String', default: undefined, desc: "The client's ID CODE (JONAS)" },
     name: { type: 'String', default: undefined, desc: 'The FULL NAME of the client' },
@@ -56,7 +97,7 @@ let projectscheme = {
  * default = undefined => not required
  * default = 'NEED' => required, will not be automatically set
  * default = <any> => required, auto set
- * 
+ *
  * default for nested object do not directly reflect subscheme
  */
 
