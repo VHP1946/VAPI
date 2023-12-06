@@ -18,7 +18,6 @@
  *
  */
 
-
 module.exports = class TrackingController {
     constructor(lib) {
         this.tools = lib;
@@ -87,35 +86,16 @@ module.exports = class TrackingController {
         }
     }
 
+
     /**
      * Retrieves a list of tracking items from the database based on requested query
      * @request { data: Object } query = { property: value, ... }
      * @returns { data: Array } list of Tracks
      */
-
     QUERYtracks = (handler, server) => {
         return new Promise(async (resolve, reject) => {
-            /*
-            let pack = {
-                db: 'Replacement',
-                collect: 'Tracking350',
-                method: 'QUERY',
-                options: {
-                    query: handler.reqpack.pack.data
-                }
-            };
-            */
+
             let response = this.tools.aresponse(handler);
-
-            //console.log('reqdata', respack.data);
-
-            /*
-            let resp = await server.services.store.request(pack);
-            respack.success = resp.success;
-            respack.data = resp.data;
-            respack.errors = resp.errors;
-            respack.msg = respack.success ? 'Tracks retrieved' : 'Tracks NOT retrieved';
-            */
 
             return resolve(response);
         })
@@ -129,23 +109,9 @@ module.exports = class TrackingController {
 
     GETtrack = (handler, server) => {
         return new Promise(async (resolve, reject) => {
-            /*
-            let idTOfind = handler.reqpack.pack.data.id;
-            let resp = await handler.services.mart({
-                db: 'Replacement',
-                collect: 'Tracking350',
-                method: 'QUERY',
-                options: {
-                    query: { id: idTOfind }
-                }
-            })
-            handler.pack.success = resp.success;
-            handler.pack.resdata = resp.data[0];
-            handler.pack.errors = resp.errors;
-            handler.pack.msg = handler.pack.success ? 'Track retrieved' : 'Track NOT retrieved';
-            */
-
             let response = this.tools.aresponse(handler);
+
+            response.data = handler.models['GETtrack'];
 
             return resolve(response)
         })
@@ -183,7 +149,9 @@ module.exports = class TrackingController {
     GETuserTracks = (handler, server) => {
         return new Promise(async (resolve, reject) => {
             let response = this.tools.aresponse(handler);
-            response.data.respack.data = handler.pack.pack.data;
+
+            response.data = handler.models['GETuserTracks'];
+
             return resolve(response)
         })
     }

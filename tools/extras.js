@@ -1,13 +1,10 @@
 var aresponse = (handler) => {
     return {
-        success: true,
+        success: handler.success || true,
         info: handler.info || {},
-        data: {
-            access: handler.pack.access,
-            reqpack: handler.pack.pack,
-            respack: {}
-        },
-        error: {},
+        pack: handler.pack || {},
+        data: {},
+        errors: {},
         msg: ''
     }
 }

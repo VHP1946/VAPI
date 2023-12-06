@@ -17,7 +17,9 @@
             },
             "badtype": {
                 "data": {
-                    "estimator": { "estimator": "MURRY" }
+                    "estimator": {
+                        "estimator": "MURRY"
+                    }
                 }
             }
         },
@@ -32,12 +34,28 @@
         "request": {
             "default": {
                 "data": {
-                    "id": "value"
+                    "id": "RRT-1695395323016"
                 }
             },
-            "test": {
+            "toomuch": {
                 "data": {
-                    "id": ""
+                    "id": "RRT-1020202",
+                    "estimator": "MURRY"
+                }
+            },
+            "toolittle": {
+                "data": {}
+            },
+            "badtype": {
+                "data": {
+                    "id": { 
+                        "id": "RRT-1020202"
+                    }
+                }
+            },
+            "notfound" : {
+                "data": {
+                    "id": "chicken"
                 }
             }
         },

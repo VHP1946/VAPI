@@ -98,7 +98,7 @@ let projectscheme = {
  * default = 'NEED' => required, will not be automatically set
  * default = <any> => required, auto set
  *
- * default for nested object do not directly reflect subscheme
+ * defaults for nested objects do not directly reflect subscheme
  */
 
 module.exports = {
