@@ -2,7 +2,7 @@ const CoreServer = require('vapi-core-server');
 //index of contollers is function that returns object
 
 let core = new CoreServer({
-    config: require('./configs/dev/local-config.json'),
+    config: require('./configs/vhp-config.json'),
     type: 'http',
     controls: {
         controllers: require('./controllers/index.js'),
