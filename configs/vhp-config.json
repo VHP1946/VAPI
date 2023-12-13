@@ -5,7 +5,7 @@
 	"auth":{
 		"name":"STORE","group":"MART","type":"server",
 		"options":{
-			"hostname":"10.0.1.212",
+			"hostname":"10.0.2.116",
 			"port":"8080",
 			"method":"POST",
 			"headers":{
@@ -16,7 +16,7 @@
 	"logging":{
 		"name":"STORE","group":"MART","type":"server",
 		"options":{
-			"hostname":"10.0.1.212",
+			"hostname":"10.0.2.116",
 			"port":"8080",
 			"method":"POST",
 			"headers":{
@@ -28,7 +28,7 @@
 		"STORE":{"name":"STORE","group":"MART","type":"server",
 		"options":{
 			"http":{
-				"hostname":"10.0.1.212",
+				"hostname":"10.0.2.116",
 				"port":"80",
 				"method":"POST",
 				"headers":{
@@ -39,7 +39,7 @@
 		"JAPI":{"name":"JAPI","group":"","type":"server",
 		"options":{
 			"http":{
-				"hostname":"10.0.1.224",
+				"hostname":"10.0.2.157",
 				"port":"9000",
 				"method":"POST",
 				"headers":{
@@ -50,7 +50,7 @@
 		"MAILSERVER":{"name":"MAILSERVER","group":"","type":"server",
 		"options":{
 			"http":{
-				"hostname":"10.0.1.224",
+				"hostname":"10.0.2.157",
 				"port":"9001",
 				"method":"POST",
 				"headers":{
