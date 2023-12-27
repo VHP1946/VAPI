@@ -6,8 +6,8 @@
   "devDependencies": {
     "nodemon": "^3.0.1",
     "readline": "^1.3.0",
-    "vhp-api": "^0.1.3",
-    "vapi-core-server":"^0.1.2"
+    "vapi-core-server": "^0.1.4",
+    "vhp-api": "^0.1.3"
   },
   "scripts": {
     "test": "node ./testing/server-tester.js",

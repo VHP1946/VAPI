@@ -6,7 +6,7 @@
 		"name":"STORE","group":"MART","type":"server",
 		"options":{
 			"hostname":"10.0.2.116",
-			"port":"8080",
+			"port":"80",
 			"method":"POST",
 			"headers":{
 				"Content-Type":"application/json"
@@ -17,7 +17,7 @@
 		"name":"STORE","group":"MART","type":"server",
 		"options":{
 			"hostname":"10.0.2.116",
-			"port":"8080",
+			"port":"80",
 			"method":"POST",
 			"headers":{
 				"Content-Type":"application/json"
