@@ -20,15 +20,6 @@ let trackscheme = {
     bookprc: { type: 'Boolean', default: undefined, desc: 'Whether or not the BOOK PRICE was used' }
 }
 
-/**    PREVIOUS
- * strict => can properties be added?
- * default = undefined => required, will not be automatically set
- * default = 'NR' => not required
- * default = <any> => required, auto set
- * 
- * default for nested object do not directly reflect subscheme
- */
-
 /**
  * strict => can properties be added?
  * default = undefined => not required

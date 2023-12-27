@@ -247,8 +247,8 @@ module.exports = class TrackingController {
 
     /**
      * Marks track items as "to be paid"
-     * @require { data: null }
-     * @returns { data: Array } list of Tracks to be confirmed
+     * @require data: { null }
+     * @returns data: { object[] } list of Tracks to be confirmed
      */
     PAYtracks = (handler, server) => {
         return new Promise(async (resolve, reject) => {
