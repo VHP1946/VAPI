@@ -1,0 +1,525 @@
+{
+    "always": {
+        "utilityinfo": {
+            "eleccomp": {
+                "ameren": "Ameren MO",
+                "kirkwood": "Kirkwood Elec",
+                "none": "Other / None"
+            },
+            "gascomp": {
+                "spire": "Spire",
+                "none": "Other / None"
+            }
+        }
+    },
+    "workscheme": {
+        "stage": {
+            "call": {
+                "name": "Call / Request",
+                "desc": "Client contacted company (Vogel / BEE / BCE)",
+                "statuses": [
+                    "active"
+                ]
+            },
+            "lead": {
+                "name": "Lead",
+                "desc": "Client requested service / consult",
+                "statuses": [
+                    "active"
+                ]
+            },
+            "appoint": {
+                "name": "Appointment",
+                "desc": "Client has an appointment for service / consult",
+                "statuses": [
+                    "active",
+                    "cancelled"
+                ]
+            },
+            "quote": {
+                "name": "Quote",
+                "desc": "Client has been given / will be given a quote / estimate",
+                "statuses": [
+                    "active",
+                    "hold",
+                    "submitted",
+                    "cancelled",
+                    "lost"
+                ]
+            },
+            "job": {
+                "name": "Job",
+                "desc": "Work will be performed / Quote Sold",
+                "statuses": [
+                    "submitted",
+                    "scheduled",
+                    "inprogress",
+                    "reviewed",
+                    "closed",
+                    "cancelled"
+                ]
+            },
+            "archive": {
+                "name": "Archived",
+                "desc": "Project info is archived",
+                "statuses": {
+                    "archived": {
+                        "name": "Archived",
+                        "desc": "Project info is archived"
+                    }
+                }
+            }
+        },
+        "status": {
+            "active": {
+                "name": "Active",
+                "desc": "Project is Active"
+            },
+            "hold": {
+                "name": "On Hold",
+                "desc": "Project is On Hold / waiting for something"
+            },
+            "submitted": {
+                "name": "Submitted",
+                "desc": "Project has been submitted to office"
+            },
+            "scheduled": {
+                "name": "Scheduled",
+                "desc": "Project has been given a start date"
+            },
+            "inprogress": {
+                "name": "In-Progress",
+                "desc": "Project is currently being worked on (physically)"
+            },
+            "reviewed": {
+                "name": "Work Complete / Reviewed",
+                "desc": "Physical work has been completed and checked"
+            },
+            "closed": {
+                "name": "Project Complete / Closed",
+                "desc": "Project has been reviewed and all administrative work is complete"
+            },
+            "archived": {
+                "name": "Archived",
+                "desc": "Project info has been moved to the archives"
+            },
+            "cancelled": {
+                "name": "Cancelled",
+                "desc": "Project was cancelled (Appointment, Quote, Job)"
+            },
+            "lost": {
+                "name": "Lost",
+                "desc": "Client confirmed another route was taken"
+            }
+        }
+    },
+    "manufacturers": {
+        "bosch": {
+            "name": "Bosch"
+        },
+        "carrier": {
+            "name": "Carrier"
+        },
+        "climatemaster": {
+            "name": "ClimateMaster"
+        },
+        "daikin": {
+            "name": "Daikin"
+        },
+        "sunrise": {
+            "name": "Sunrise"
+        },
+        "default": {
+            "name": "DEFAULT"
+        }
+    },
+    "marketing":{
+        "generator": {
+            "amerenue": {
+                "name": "Ameren UE",
+                "desc": "Ameren UE Partner Locator"
+            },
+            "amerenpays": {
+                "name": "Ameren PAYS",
+                "desc": "Ameren “Pay as You Save” Program"
+            },
+            "angies": {
+                "name": "Angie's List",
+                "desc": ""
+            },
+            "bbb": {
+                "name": "BBB",
+                "desc": "Better Business Bureau"
+            },
+            "billboard": {
+                "name": "Billboard",
+                "desc": "Roadside Billboard"
+            },
+            "cardbee": {
+                "name": "Card: BEE",
+                "desc": "BEE Business Card"
+            },
+            "cardvogel": {
+                "name": "Card: Vogel",
+                "desc": "Vogel Business Card"
+            },
+            "choice": {
+                "name": "Choice HW",
+                "desc": "David Specter at Choice Home Warranty"
+            },
+            "commconst": {
+                "name": "Comm Construction",
+                "desc": "Referral from our construction division or construction contacts"
+            },
+            "competitor": {
+                "name": "Competitor",
+                "desc": "Competitor Referral"
+            },
+            "atticsys": {
+                "name": "Dealer: Attic Systems",
+                "desc": "Attic Systems Dealer Locator"
+            },
+            "carrier": {
+                "name": "Dealer: Carrier",
+                "desc": "Carrier Dealer Locator"
+            },
+            "provia": {
+                "name": "Dealer: Provia",
+                "desc": "Provia Dealer Locater"
+            },
+            "restoration": {
+                "name": "Dealer: Restoration",
+                "desc": "Restoration Dealer Locater"
+            },
+            "directmail": {
+                "name": "Direct Mail",
+                "desc": ""
+            },
+            "directb4b": {
+                "name": "Direct: BEE for BEE",
+                "desc": "BEE customer refers a new customer to BEE; Consultant asked for by name"
+            },
+            "directb4v": {
+                "name": "Direct: BEE for Vogel",
+                "desc": "BEE customer refers a new customer to Vogel; Consultant asked for by name"
+            },
+            "directv4b": {
+                "name": "Direct: Vogel for BEE",
+                "desc": "Vogel customer refers a new customer to BEE; Consultant asked for by name"
+            },
+            "directv4v": {
+                "name": "Direct: Vogel for Vogel",
+                "desc": "Vogel customer refers a new customer to Vogel; Consultant asked for by name"
+            },
+            "dorrhangers": {
+                "name": "Doorhangers",
+                "desc": "Old School"
+            },
+            "energyaudit": {
+                "name": "Energy Auditor",
+                "desc": ""
+            },
+            "equipment": {
+                "name": "Equipment Stickers",
+                "desc": ""
+            },
+            "existb4b": {
+                "name": "Exist: BEE for BEE",
+                "desc": "Existing BEE clients who contact BEE directly; Not service referrals"
+            },
+            "existb4v": {
+                "name": "Exist: BEE for Vogel",
+                "desc": "Existing BEE clients who contact Vogel directly; Not service referrals"
+            },
+            "existv4b": {
+                "name": "Exist: Vogel for BEE",
+                "desc": "Existing Vogel clients who contact BEE directly; Not service referrals"
+            },
+            "existv4v": {
+                "name": "Exist: Vogel for Vogel",
+                "desc": "Existing Vogel clients who contact Vogel directly; Not service referrals"
+            },
+            "diamond": {
+                "name": "Exist: Diamond Cons",
+                "desc": "Existing customers of Diamond Construction."
+            },
+            "masonry": {
+                "name": "Exist: Masonry & Glass",
+                "desc": "Existing customers of Masonry & Glass Systems"
+            },
+            "newsystems": {
+                "name": "Exist: New Systems",
+                "desc": "Existing customers of New Systems."
+            },
+            "fenton": {
+                "name": "Fenton Office",
+                "desc": ""
+            },
+            "insurance": {
+                "name": "Insurance / RE",
+                "desc": "Insurance or Real Estate"
+            },
+            "facebook": {
+                "name": "Internet: Facebook",
+                "desc": ""
+            },
+            "instagram": {
+                "name": "Internet: Instagram",
+                "desc": ""
+            },
+            "intradio": {
+                "name": "Internet: Radio",
+                "desc": "Pandora, Spotify, etc."
+            },
+            "intsearch": {
+                "name": "Internet: Search Engine",
+                "desc": "Google, Bing or other"
+            },
+            "youtube": {
+                "name": "Internet: YouTube",
+                "desc": ""
+            },
+            "local36": {
+                "name": "Local 36",
+                "desc": "Union Local 36"
+            },
+            "radio": {
+                "name": "Radio: AM/FM",
+                "desc": ""
+            },
+            "self": {
+                "name": "Self-Generated",
+                "desc": "New client that contacted the estimator / consultant directly"
+            },
+            "servicebee": {
+                "name": "Service: BEE",
+                "desc": "Vogel service techs referring work to BEE"
+            },
+            "servicevogel": {
+                "name": "Service: Vogel",
+                "desc": "Vogel service techs referring work to Vogel"
+            },
+            "spire": {
+                "name": "Spire Gas",
+                "desc": ""
+            },
+            "television": {
+                "name": "Television",
+                "desc": ""
+            },
+            "trucksbee": {
+                "name": "Trucks: BEE",
+                "desc": ""
+            },
+            "trucksvogel": {
+                "name": "Trucks: Vogel",
+                "desc": ""
+            },
+            "webbee": {
+                "name": "Website: BEE",
+                "desc": ""
+            },
+            "webvogel": {
+                "name": "Website: Vogel",
+                "desc": ""
+            },
+            "yardbee": {
+                "name": "Yard Sign: BEE",
+                "desc": ""
+            },
+            "yardvogel": {
+                "name": "Yard Sign: Vogel",
+                "desc": ""
+            },
+            "unknown": {
+                "name": "UNKNOWN",
+                "desc": "Info not provided / Client would not provide"
+            }
+        },
+        "source": {
+            "amerenue": {
+                "name": "Ameren UE",
+                "desc": "Ameren UE Partner Locator"
+            },
+            "amerenpays": {
+                "name": "Ameren PAYS",
+                "desc": "Ameren “Pay as You Save” Program"
+            },
+            "angies": {
+                "name": "Angie's List",
+                "desc": ""
+            },
+            "bbb": {
+                "name": "BBB",
+                "desc": "Better Business Bureau"
+            },
+            "billboard": {
+                "name": "Billboard",
+                "desc": "Roadside Billboard"
+            },
+            "chatbee": {
+                "name": "Chat: BEE",
+                "desc": "Online chat through BEE website"
+            },
+            "chatvogel": {
+                "name": "Chat: Vogel",
+                "desc": "Online chat through Vogel website"
+            },
+            "choice": {
+                "name": "Choice HW",
+                "desc": "David Specter at Choice Home Warranty"
+            },
+            "atticsys": {
+                "name": "Dealer: Attic Systems",
+                "desc": "Attic Systems Dealer Locator"
+            },
+            "carrier": {
+                "name": "Dealer: Carrier",
+                "desc": "Carrier Dealer Locator"
+            },
+            "provia": {
+                "name": "Dealer: Provia",
+                "desc": "Provia Dealer Locater"
+            },
+            "restoration": {
+                "name": "Dealer: Restoration",
+                "desc": "Restoration Dealer Locater"
+            },
+            "directmail": {
+                "name": "Direct Mail",
+                "desc": ""
+            },
+            "dorrhangers": {
+                "name": "Doorhangers",
+                "desc": "Old School"
+            },
+            "energyaudit": {
+                "name": "Energy Auditor",
+                "desc": ""
+            },
+            "equipment": {
+                "name": "Equipment Stickers",
+                "desc": ""
+            },
+            "diamond": {
+                "name": "Exist: Diamond Cons",
+                "desc": "Existing customers of Diamond Construction."
+            },
+            "masonry": {
+                "name": "Exist: Masonry & Glass",
+                "desc": "Existing customers of Masonry & Glass Systems"
+            },
+            "newsystems": {
+                "name": "Exist: New Systems",
+                "desc": "Existing customers of New Systems."
+            },
+            "insurance": {
+                "name": "Insurance / RE",
+                "desc": "Insurance or Real Estate"
+            },
+            "facebook": {
+                "name": "Internet: Facebook",
+                "desc": ""
+            },
+            "instagram": {
+                "name": "Internet: Instagram",
+                "desc": ""
+            },
+            "intradio": {
+                "name": "Internet: Radio",
+                "desc": "Pandora, Spotify, etc."
+            },
+            "intsearch": {
+                "name": "Internet: Search Engine",
+                "desc": "Google, Bing or other"
+            },
+            "youtube": {
+                "name": "Internet: YouTube",
+                "desc": ""
+            },
+            "local36": {
+                "name": "Local 36",
+                "desc": "Union Local 36"
+            },
+            "radio": {
+                "name": "Radio: AM/FM",
+                "desc": ""
+            },
+            "servicebee": {
+                "name": "Service: BEE",
+                "desc": "Vogel service techs referring work to BEE"
+            },
+            "servicevogel": {
+                "name": "Service: Vogel",
+                "desc": "Vogel service techs referring work to Vogel"
+            },
+            "shared": {
+                "name": "Shared Direct",
+                "desc": "Nonspecific contact sharing: text, business card, word of mouth, etc."
+            },
+            "spire": {
+                "name": "Spire Gas",
+                "desc": ""
+            },
+            "television": {
+                "name": "Television",
+                "desc": ""
+            },
+            "trucksbee": {
+                "name": "Trucks: BEE",
+                "desc": ""
+            },
+            "trucksvogel": {
+                "name": "Trucks: Vogel",
+                "desc": ""
+            },
+            "webbee": {
+                "name": "Website: BEE",
+                "desc": ""
+            },
+            "webvogel": {
+                "name": "Website: Vogel",
+                "desc": ""
+            },
+            "yardbee": {
+                "name": "Yard Sign: BEE",
+                "desc": ""
+            },
+            "yardvogel": {
+                "name": "Yard Sign: Vogel",
+                "desc": ""
+            },
+            "unknown": {
+                "name": "UNKNOWN",
+                "desc": "Info not provided / Client would not provide"
+            }
+        },
+        "time": {
+            "morning": "1-11",
+            "afternoon": "12-16",
+            "evening": "17-24"
+        },
+        "prstvia": {
+            "initial": {
+                "name": "Initial Visit",
+                "desc": "Presented 'at the table'"
+            },
+            "followup": {
+                "name": "Follow-Up Visit",
+                "desc": "Returned to physically present"
+            },
+            "email": {
+                "name": "Emailed",
+                "desc": "Digital presentation sent"
+            },
+            "post": {
+                "name": "US Post",
+                "desc": "Physically sent via US Post"
+            },
+            "office": {
+                "name": "Office",
+                "desc": "Met in-office to present"
+            }
+        }
+    }
+}

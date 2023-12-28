@@ -1,0 +1,36 @@
+{
+    "pricing": {
+        "bee": {
+            "name": "bee",
+            "creditcard": 0,
+            "labor": 90.00,
+            "tgmargin": 0.44,
+            "salestax": 0.09
+        },
+        "resinstall": {
+            "name": "resinstall",
+            "creditcard": 0,
+            "labor": 90.00,
+            "tgmargin": 0.44,
+            "salestax": 0.09
+        },
+        "resservice": {
+            "name": "resservice",
+            "creditcard": 0,
+            "labor": 90.00,
+            "tgmargin": 0.44,
+            "salestax": 0.09
+        }
+    },
+    "financing": {
+        "finplans": [
+            {
+                "name": "WELL-1019",
+                "std": "0.0550",
+                "promo": "0.08",
+                "rate": "12",
+                "desc": "12 Mo. SaC"
+            }
+        ]
+    }
+}

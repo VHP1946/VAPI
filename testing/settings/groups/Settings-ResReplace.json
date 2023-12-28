@@ -1,0 +1,348 @@
+{
+    "always": {},
+    "workscheme": [
+        "lead",
+        "quote",
+        "job",
+        "archive"
+    ],
+    "workflows": [
+        "01",
+        "02"
+    ],
+    "productProfiles": {
+        "hvac": {
+            "pricekey": "Pricing350",
+            "pricing": [
+                "resinstall"
+            ],
+            "discounts": {
+                "project": {
+                    "multisys": {
+                        "title": "Multi-System Discount",
+                        "value": {
+                            "sys": 0.05,
+                            "part": 0.05
+                        }
+                    },
+                    "frndsfam": {
+                        "title": "Friends & Family Discount",
+                        "value": {
+                            "sys": 0.1,
+                            "part": 0.1
+                        }
+                    }
+                },
+                "system": {
+                    "noremorse": {
+                        "title": "No Remorse Discount",
+                        "value": {
+                            "sys": 500,
+                            "part": 250
+                        }
+                    },
+                    "referral": {
+                        "title": "Referral Discount",
+                        "value": {
+                            "sys": 100,
+                            "part": 100
+                        }
+                    }
+                },
+                "tier": {
+                    "discinstnt": "Instant Discount",
+                    "discmfg": "Manufacturer's Discount",
+                    "discspcl": "Special Discount",
+                    "rebateelec": "Electric Rebate",
+                    "rebategas": "Gas Rebate"
+                }
+            },
+            "projdetails": {
+                "strttime": {
+                    "name": "Job Start Time",
+                    "location": [
+                        "sys",
+                        "out",
+                        "in"
+                    ],
+                    "note": "",
+                    "value": "8:00 am"
+                },
+                "yardsign": {
+                    "name": "Yard Sign",
+                    "location": [
+                        "sys",
+                        "out",
+                        "in"
+                    ],
+                    "note": "",
+                    "value": true
+                },
+                "ladder": {
+                    "name": "40' Ladder Required",
+                    "location": [
+                        "sys",
+                        "out"
+                    ],
+                    "note": "",
+                    "value": false
+                },
+                "coredrill": {
+                    "name": "Core Drill Needed",
+                    "location": [
+                        "sys",
+                        "out",
+                        "in"
+                    ],
+                    "note": "",
+                    "value": false
+                }
+            },
+            "fintiers": {
+                "upfront": {
+                    "title": "Upfront",
+                    "mfg": {
+                        "DAIKIN": {
+                            "lender": "WELLS-1019",
+                            "std": "0.0550",
+                            "promo": "0.08",
+                            "rate": "12",
+                            "desc": "12 Mo. SaC"
+                        },
+                        "CARRIER": {
+                            "lender": "WELLS-1019",
+                            "std": "0.0550",
+                            "promo": "0.0550",
+                            "rate": "12",
+                            "desc": "12 Mo. SaC"
+                        },
+                        "DEFAULT": {
+                            "lender": "WELLS-1019",
+                            "std": "0.0550",
+                            "promo": "0.0550",
+                            "rate": "12",
+                            "desc": "12 Mo. SaC"
+                        }
+                    }
+                },
+                "promo": {
+                    "title": "Promo",
+                    "mfg": {
+                        "DAIKIN": {
+                            "lender": "WELLS-4091",
+                            "std": "0.11",
+                            "promo": "0.08",
+                            "rate": "36",
+                            "desc": "36 Mo. @ 0%"
+                        },
+                        "CARRIER": {
+                            "lender": "WELLS-4091",
+                            "std": "0.11",
+                            "promo": "0.055",
+                            "rate": "36",
+                            "desc": "36 Mo. @ 0%"
+                        },
+                        "DEFAULT": {
+                            "lender": "WELLS-4091",
+                            "std": "0.11",
+                            "promo": "0.055",
+                            "rate": "36",
+                            "desc": "36 Mo. @ 0%"
+                        }
+                    }
+                },
+                "flex": {
+                    "title": "Lowest Payment",
+                    "mfg": {
+                        "DAIKIN": {
+                            "lender": "GDLP-10YR",
+                            "std": "0.0550",
+                            "promo": "0.08",
+                            "rate": "0.01338",
+                            "desc": "120 Mo."
+                        },
+                        "CARRIER": {
+                            "lender": "WELLS-3671",
+                            "std": "0.0550",
+                            "promo": "0.0505",
+                            "rate": "0.01338",
+                            "desc": "120 Mo."
+                        },
+                        "DEFAULT": {
+                            "lender": "WELLS-3671",
+                            "std": "0.0550",
+                            "promo": "0.0505",
+                            "rate": "0.01338",
+                            "desc": "120 Mo."
+                        }
+                    }
+                },
+                "secondlook": {
+                    "title": "Second Look",
+                    "mfg": {
+                        "DAIKIN": {
+                            "lender": "GDLP-10YR",
+                            "std": "0.055",
+                            "promo": "0.065",
+                            "rate": "0.0167",
+                            "desc": "120 Mo."
+                        },
+                        "CARRIER": {
+                            "lender": "GDLP-10YR",
+                            "std": "0.0975",
+                            "promo": "0.00",
+                            "rate": "0.0167",
+                            "desc": "120 Mo."
+                        },
+                        "DEFAULT": {
+                            "lender": "GDLP-10YR",
+                            "std": "0.0975",
+                            "promo": "0.00",
+                            "rate": "0.0167",
+                            "desc": "120 Mo."
+                        }
+                    }
+                }
+            }
+        },
+        "bee": {
+            "pricekey": "PricingBEE",
+            "pricing": [
+                "bee"
+            ],
+            "fintiers": {}
+        }
+    },
+    "manufacturers": {
+        "carrier": {
+            "dbldip": false,
+            "maxreb": 1500,
+            "mfgportion": 0.5,
+            "brandexclusive": false
+        },
+        "daikin": {
+            "dbldip": false,
+            "maxreb": 2000,
+            "mfgportion": 0.5,
+            "brandexclusive": true
+        },
+        "default": {
+            "dbldip": true,
+            "maxreb": 1500,
+            "mfgportion": 0,
+            "brandexclusive": false
+        }
+    },
+    "products": {
+        "boilers": {
+            "name": "Boiler",
+            "dept": "350",
+            "profile": "hvac",
+            "categories": [
+                "boiler"
+            ],
+            "manufacturers": [
+                "bosch"
+            ]
+        },
+        "geo": {
+            "name": "Geothermal",
+            "dept": "350",
+            "profile": "hvac",
+            "categories": [
+                "geothermal"
+            ],
+            "manufacturers": [
+                "carrier",
+                "climatemaster"
+            ]
+        },
+        "tradsplit": {
+            "name": "Traditional Split",
+            "profile": "hvac",
+            "categories": [
+                "system",
+                "furnace",
+                "condensor"
+            ],
+            "manufacturers": [
+                "carrier",
+                "daikin"
+            ]
+        },
+        "mini": {
+            "name": "Mini- / Multi-Split",
+            "profile": "hvac",
+            "categories": [
+                "mini"
+            ],
+            "manufacturers": [
+                "carrier",
+                "daikin"
+            ]
+        },
+        "iaq": {
+            "name": "IAQ",
+            "profile": "hvac",
+            "categories": [
+                "iaq",
+                "iaqpack"
+            ]
+        },
+        "hvacwork": {
+            "name": "General HVAC Work",
+            "profile": "hvac",
+            "categories": [
+                "custom",
+                "testing",
+                "repair",
+                "rewards"
+            ]
+        },
+        "windows": {
+            "name": "Windows",
+            "profile": "bee",
+            "categories": [
+                "windows"
+            ],
+            "manufacturers": [
+                "sunrise"
+            ]
+        },
+        "glassblk": {
+            "name": "Glass Block",
+            "profile": "bee",
+            "categories": [
+                "glassblk"
+            ]
+        },
+        "doors": {
+            "name": "Doors",
+            "profile": "bee",
+            "categories": [],
+            "manufacturers": [
+                "provia"
+            ]
+        },
+        "envelope": {
+            "name": "Doors",
+            "profile": "bee",
+            "categories": [
+                "biotreat",
+                "iaq",
+                "atticinsul",
+                "crawl",
+                "sprayfoam",
+                "wallinsul"
+            ]
+        },
+        "beework": {
+            "name": "General BEE Work",
+            "profile": "bee",
+            "categories": [
+                "testing",
+                "repairs"
+            ]
+        }
+    }
+}

@@ -1,0 +1,568 @@
+{
+    "dept": {
+        "BEE": {
+            "name": "BEE",
+            "desc": "Building Envelope Experts",
+            "categories": {
+                "biotreat": {
+                    "name": "Bio Treatment",
+                    "desc": "",
+                    "types": {
+                        "attic": {
+                            "name": "Attic",
+                            "desc": ""
+                        },
+                        "basement": {
+                            "name": "Basement",
+                            "desc": ""
+                        },
+                        "crawl": {
+                            "name": "Crawlspace",
+                            "desc": ""
+                        }
+                    }
+                },
+                "doors": {
+                    "name": "Doors",
+                    "desc": "",
+                    "types": {
+                        "tier1": {
+                            "name": "Tier 1",
+                            "desc": ""
+                        },
+                        "tier2": {
+                            "name": "Tier 2",
+                            "desc": ""
+                        },
+                        "tier3": {
+                            "name": "Tier 3",
+                            "desc": ""
+                        },
+                        "tier4": {
+                            "name": "Tier 4",
+                            "desc": ""
+                        },
+                        "tier5": {
+                            "name": "Tier 5",
+                            "desc": ""
+                        }
+                    }
+                },
+                "glassblk": {
+                    "name": "Glass Block",
+                    "desc": "",
+                    "types": {
+                        "glassblk": {
+                            "name": "Glass Block",
+                            "desc": ""
+                        }
+                    }
+                },
+                "iaq": {
+                    "name": "IAQ",
+                    "desc": "Indoor Air Quality",
+                    "types": {
+                        "coprotect": {
+                            "name": "CO Protection",
+                            "desc": "Reliable Carbon Monoxide Protection"
+                        }
+                    }
+                },
+                "atticinsul": {
+                    "name": "Attic Insulation",
+                    "desc": "",
+                    "types": {
+                        "doitplus": {
+                            "name": "Do it All Now +",
+                            "desc": "Do it All Now +"
+                        },
+                        "doit": {
+                            "name": "Do it All Now",
+                            "desc": "Do it All Now"
+                        },
+                        "eihome": {
+                            "name": "E & I Home",
+                            "desc": "Enhanced & Improved Home"
+                        },
+                        "ihome": {
+                            "name": "Improved Home",
+                            "desc": "Improved Home"
+                        },
+                        "immeadiate": {
+                            "name": "Immeadiate Needs",
+                            "desc": "Immeadiate Needs"
+                        }
+                    }
+                },
+                "crawl": {
+                    "name": "Crawl Space",
+                    "desc": "Crawlspace",
+                    "types": {
+                        "doitplus": {
+                            "name": "Do it All Now +",
+                            "desc": "Do it All Now +"
+                        },
+                        "doit": {
+                            "name": "Do it All Now",
+                            "desc": "Do it All Now"
+                        },
+                        "eihome": {
+                            "name": "E & I Home",
+                            "desc": "Enhanced & Improved Home"
+                        },
+                        "ihome": {
+                            "name": "Improved Home",
+                            "desc": "Improved Home"
+                        },
+                        "immeadiate": {
+                            "name": "Immeadiate Needs",
+                            "desc": "Immeadiate Needs"
+                        }
+                    }
+                },
+                "testing": {
+                    "name": "Testing",
+                    "desc": "Performance Testing",
+                    "types": {
+                        "audit": {
+                            "name": "Energy Audit",
+                            "desc": ""
+                        },
+                        "blower": {
+                            "name": "Blower Door",
+                            "desc": ""
+                        }
+                    }
+                },
+                "repairs": {
+                    "name": "Repairs / Mods",
+                    "desc": "Repairs / Modifications",
+                    "types": {
+                        "carpentry": {
+                            "name": "Carpentry",
+                            "desc": ""
+                        },
+                        "door": {
+                            "name": "Door",
+                            "desc": ""
+                        },
+                        "glassblk": {
+                            "name": "Glass Block",
+                            "desc": ""
+                        },
+                        "window": {
+                            "name": "Window",
+                            "desc": ""
+                        }
+                    }
+                },
+                "sprayfoam": {
+                    "name": "Spray Foam",
+                    "desc": "",
+                    "types": {
+                        "attic": {
+                            "name": "Attic",
+                            "desc": "Attic Encapsulation"
+                        },
+                        "duct": {
+                            "name": "Ductwork",
+                            "desc": ""
+                        },
+                        "floors": {
+                            "name": "Floors",
+                            "desc": ""
+                        },
+                        "rim": {
+                            "name": "Rim Joist",
+                            "desc": ""
+                        },
+                        "walls": {
+                            "name": "Ceilings & Walls",
+                            "desc": ""
+                        }
+                    }
+                },
+                "wallinsul": {
+                    "name": "Wall Insulation",
+                    "desc": "",
+                    "types": {
+                        "pack": {
+                            "name": "Dense Pack",
+                            "desc": ""
+                        },
+                        "batts": {
+                            "name": "Wall Batts",
+                            "desc": ""
+                        }
+                    }
+                },
+                "window": {
+                    "name": "Window",
+                    "desc": "",
+                    "types": {
+                        "tier1": {
+                            "name": "Tier 1",
+                            "desc": ""
+                        },
+                        "tier2": {
+                            "name": "Tier 2",
+                            "desc": ""
+                        },
+                        "tier3": {
+                            "name": "Tier 3",
+                            "desc": ""
+                        },
+                        "tier4": {
+                            "name": "Tier 4",
+                            "desc": ""
+                        },
+                        "tier5": {
+                            "name": "Tier 5",
+                            "desc": ""
+                        }
+                    }
+                }
+            }
+        },
+        "Vogel": {
+            "name": "Residential Replacement",
+            "desc": "Residential Replacement and Installation",
+            "categories": {
+                "boiler": {
+                    "name": "Boiler",
+                    "desc": "",
+                    "types": {
+                        "tier1": {
+                            "name": "Complete",
+                            "desc": ""
+                        },
+                        "tier2": {
+                            "name": "Clever",
+                            "desc": ""
+                        },
+                        "tier3": {
+                            "name": "Constant",
+                            "desc": ""
+                        },
+                        "tier4": {
+                            "name": "Classic",
+                            "desc": ""
+                        }
+                    }
+                },
+                "condenser": {
+                    "name": "Condenser",
+                    "desc": "AC or HP; with or without EVAP",
+                    "types": {
+                        "tier1": {
+                            "name": "Complete",
+                            "desc": ""
+                        },
+                        "tier2": {
+                            "name": "Clever",
+                            "desc": ""
+                        },
+                        "tier3": {
+                            "name": "Constant",
+                            "desc": ""
+                        },
+                        "tier4": {
+                            "name": "Classic",
+                            "desc": ""
+                        }
+                    }
+                },
+                "custom": {
+                    "name": "Custom Work",
+                    "desc": "",
+                    "types": {
+                        "relcond": {
+                            "name": "Condenser Relocation",
+                            "desc": ""
+                        },
+                        "cutin": {
+                            "name": "Cut-In",
+                            "desc": "No provided plans"
+                        },
+                        "newcon": {
+                            "name": "New Construction",
+                            "desc": "Client-provided plans"
+                        },
+                        "pipe": {
+                            "name": "Gas Pipe",
+                            "desc": ""
+                        },
+                        "gut": {
+                            "name": "Gut Rehab",
+                            "desc": ""
+                        },
+                        "relradiant": {
+                            "name": "Radiant Relocation",
+                            "desc": ""
+                        }
+                    }
+                },
+                "furnace": {
+                    "name": "Furnace / AHU",
+                    "desc": "Traditional Split Equipment Only",
+                    "types": {
+                        "tier1": {
+                            "name": "Complete",
+                            "desc": ""
+                        },
+                        "tier2": {
+                            "name": "Clever",
+                            "desc": ""
+                        },
+                        "tier3": {
+                            "name": "Constant",
+                            "desc": ""
+                        },
+                        "tier4": {
+                            "name": "Classic",
+                            "desc": ""
+                        }
+                    }
+                },
+                "geo": {
+                    "name": "Geothermal",
+                    "desc": "",
+                    "types": {
+                        "tier1": {
+                            "name": "Complete",
+                            "desc": ""
+                        },
+                        "tier2": {
+                            "name": "Clever",
+                            "desc": ""
+                        },
+                        "tier3": {
+                            "name": "Constant",
+                            "desc": ""
+                        },
+                        "tier4": {
+                            "name": "Classic",
+                            "desc": ""
+                        }
+                    }
+                },
+                "iaq": {
+                    "name": "IAQ (Single)",
+                    "desc": "Indoor Air Quality",
+                    "types": {
+                        "balance": {
+                            "name": "Air Balance",
+                            "desc": ""
+                        },
+                        "bathex": {
+                            "name": "Bathroom Exhaust",
+                            "desc": ""
+                        },
+                        "bioshield": {
+                            "name": "Bio-Shield",
+                            "desc": ""
+                        },
+                        "duct": {
+                            "name": "Ductwork",
+                            "desc": ""
+                        },
+                        "cleaning": {
+                            "name": "Duct / Dryer Cleaning",
+                            "desc": ""
+                        },
+                        "smokeprotect": {
+                            "name": "Fire / Smoke Detector",
+                            "desc": "Enhanced Fire and Smoke Protection"
+                        },
+                        "filters": {
+                            "name": "Filters",
+                            "desc": "Equipment and Allergen Defense"
+                        },
+                        "dehumid": {
+                            "name": "Dehumidifier",
+                            "desc": "Excess Moisture Control"
+                        },
+                        "humid": {
+                            "name": "Humidifier",
+                            "desc": "Heating Moisture Management"
+                        },
+                        "kitchex": {
+                            "name": "Kitchen Exhaust",
+                            "desc": ""
+                        },
+                        "coprotect": {
+                            "name": "CO Detector",
+                            "desc": "Reliable Carbon Monoxide Protection"
+                        },
+                        "stat": {
+                            "name": "Thermostat",
+                            "desc": "New or Replacement Thermostat"
+                        },
+                        "vent": {
+                            "name": "Ventilation",
+                            "desc": ""
+                        },
+                        "zoning": {
+                            "name": "Zoning",
+                            "desc": ""
+                        }
+                    }
+                },
+                "iaqpack": {
+                    "name": "IAQ Package",
+                    "desc": "Pre-packaged Indoor Air Quality",
+                    "types": {
+                        "ultimate": {
+                            "name": "Ultimate Protection",
+                            "desc": ""
+                        },
+                        "delplus": {
+                            "name": "Deluxe +",
+                            "desc": ""
+                        },
+                        "del": {
+                            "name": "Deluxe",
+                            "desc": ""
+                        },
+                        "popular": {
+                            "name": "Most Popular",
+                            "desc": ""
+                        }
+                    }
+                },
+                "mini": {
+                    "name": "Mini / Multisplit",
+                    "desc": "",
+                    "types": {
+                        "tier1": {
+                            "name": "Complete",
+                            "desc": ""
+                        },
+                        "tier2": {
+                            "name": "Clever",
+                            "desc": ""
+                        },
+                        "tier3": {
+                            "name": "Constant",
+                            "desc": ""
+                        },
+                        "tier4": {
+                            "name": "Classic",
+                            "desc": ""
+                        }
+                    }
+                },
+                "testing": {
+                    "name": "Performance Testing",
+                    "desc": "",
+                    "types": {
+                        "airadvice": {
+                            "name": "Air Advice",
+                            "desc": ""
+                        },
+                        "caz": {
+                            "name": "CAZ",
+                            "desc": ""
+                        },
+                        "ductleak": {
+                            "name": "Ductwork Leakage",
+                            "desc": ""
+                        },
+                        "comfort": {
+                            "name": "Home Comfort Study",
+                            "desc": ""
+                        }
+                    }
+                },
+                "repair": {
+                    "name": "Repairs",
+                    "desc": "",
+                    "types": {
+                        "boil": {
+                            "name": "Boiler",
+                            "desc": ""
+                        },
+                        "cond": {
+                            "name": "Condenser",
+                            "desc": "AC or HP"
+                        },
+                        "furn": {
+                            "name": "Furnace / AHU",
+                            "desc": ""
+                        },
+                        "mini": {
+                            "name": "Mini / Multisplit",
+                            "desc": ""
+                        }
+                    }
+                },
+                "rewards": {
+                    "name": "Rewards Membership",
+                    "desc": "",
+                    "types": {
+                        "ultimate": {
+                            "name": "Ultimate",
+                            "desc": ""
+                        },
+                        "prem": {
+                            "name": "Premium",
+                            "desc": ""
+                        },
+                        "classic": {
+                            "name": "Classic",
+                            "desc": ""
+                        }
+                    }
+                },
+                "system": {
+                    "name": "System",
+                    "desc": "Full System",
+                    "types": {
+                        "tier1": {
+                            "name": "Complete",
+                            "desc": ""
+                        },
+                        "tier2": {
+                            "name": "Clever",
+                            "desc": ""
+                        },
+                        "tier3": {
+                            "name": "Constant",
+                            "desc": ""
+                        },
+                        "tier4": {
+                            "name": "Classic",
+                            "desc": ""
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "progress": {
+        "open": {
+            "name": "Open",
+            "desc": "Project remains Open"
+        },
+        "won": {
+            "name": "Won",
+            "desc": "Project was Sold / Won"
+        },
+        "waiting": {
+            "name": "Waiting",
+            "desc": "Client is Waiting"
+        },
+        "finfail": {
+            "name": "Failed Financing",
+            "desc": "Customer could not secure Financing"
+        },
+        "lost": {
+            "name": "Lost",
+            "desc": "Client confirmed another route was taken"
+        },
+        "paid": {
+            "name": "Paid",
+            "desc": "Estimator has been compensatated"
+        }
+    }
+}

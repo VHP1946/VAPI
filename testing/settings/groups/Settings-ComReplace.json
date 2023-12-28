@@ -1,0 +1,193 @@
+{
+    "workscheme": [
+        "lead",
+        "quote",
+        "job",
+        "archived"
+    ],
+    "workflows": [
+        "01",
+        "02"
+    ],
+    "productProfiles": {
+        "hvac": {
+            "pricekey": "",
+            "pricing": [
+                "comreplace"
+            ],
+            "fintiers": {
+                "upfront": {
+                    "title": "Upfront",
+                    "mfg": {
+                        "DAIKIN": {
+                            "lender": "WELLS-1019",
+                            "std": "0.0550",
+                            "promo": "0.08",
+                            "rate": "12",
+                            "desc": "12 Mo. SaC"
+                        },
+                        "CARRIER": {
+                            "lender": "WELLS-1019",
+                            "std": "0.0550",
+                            "promo": "0.0550",
+                            "rate": "12",
+                            "desc": "12 Mo. SaC"
+                        },
+                        "DEFAULT": {
+                            "lender": "WELLS-1019",
+                            "std": "0.0550",
+                            "promo": "0.0550",
+                            "rate": "12",
+                            "desc": "12 Mo. SaC"
+                        }
+                    }
+                },
+                "promo": {
+                    "title": "Promo",
+                    "mfg": {
+                        "DAIKIN": {
+                            "lender": "WELLS-4091",
+                            "std": "0.11",
+                            "promo": "0.08",
+                            "rate": "36",
+                            "desc": "36 Mo. @ 0%"
+                        },
+                        "CARRIER": {
+                            "lender": "WELLS-4091",
+                            "std": "0.11",
+                            "promo": "0.055",
+                            "rate": "36",
+                            "desc": "36 Mo. @ 0%"
+                        },
+                        "DEFAULT": {
+                            "lender": "WELLS-4091",
+                            "std": "0.11",
+                            "promo": "0.055",
+                            "rate": "36",
+                            "desc": "36 Mo. @ 0%"
+                        }
+                    }
+                },
+                "flex": {
+                    "title": "Lowest Payment",
+                    "mfg": {
+                        "DAIKIN": {
+                            "lender": "GDLP-10YR",
+                            "std": "0.0550",
+                            "promo": "0.08",
+                            "rate": "0.01338",
+                            "desc": "120 Mo."
+                        },
+                        "CARRIER": {
+                            "lender": "WELLS-3671",
+                            "std": "0.0550",
+                            "promo": "0.0505",
+                            "rate": "0.01338",
+                            "desc": "120 Mo."
+                        },
+                        "DEFAULT": {
+                            "lender": "WELLS-3671",
+                            "std": "0.0550",
+                            "promo": "0.0505",
+                            "rate": "0.01338",
+                            "desc": "120 Mo."
+                        }
+                    }
+                },
+                "secondlook": {
+                    "title": "Second Look",
+                    "mfg": {
+                        "DAIKIN": {
+                            "lender": "GDLP-10YR",
+                            "std": "0.055",
+                            "promo": "0.065",
+                            "rate": "0.0167",
+                            "desc": "120 Mo."
+                        },
+                        "CARRIER": {
+                            "lender": "GDLP-10YR",
+                            "std": "0.0975",
+                            "promo": "0.00",
+                            "rate": "0.0167",
+                            "desc": "120 Mo."
+                        },
+                        "DEFAULT": {
+                            "lender": "GDLP-10YR",
+                            "std": "0.0975",
+                            "promo": "0.00",
+                            "rate": "0.0167",
+                            "desc": "120 Mo."
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "manufacturers": {},
+    "products": {
+        "boilers": {
+            "name": "Boiler",
+            "dept": "350",
+            "profile": "hvac",
+            "categories": [
+                "boiler"
+            ],
+            "manufacturers": [
+                "bosch"
+            ]
+        },
+        "geo": {
+            "name": "Geothermal",
+            "dept": "350",
+            "profile": "hvac",
+            "categories": [
+                "geothermal"
+            ],
+            "manufacturers": [
+                "carrier",
+                "climatemaster"
+            ]
+        },
+        "tradsplit": {
+            "name": "Traditional Split",
+            "profile": "hvac",
+            "categories": [
+                "system",
+                "furnace",
+                "condensor"
+            ],
+            "manufacturers": [
+                "carrier",
+                "daikin"
+            ]
+        },
+        "mini": {
+            "name": "Mini- / Multi-Split",
+            "profile": "hvac",
+            "categories": [
+                "mini"
+            ],
+            "manufacturers": [
+                "carrier",
+                "daikin"
+            ]
+        },
+        "iaq": {
+            "name": "IAQ",
+            "profile": "hvac",
+            "categories": [
+                "iaq",
+                "iaqpack"
+            ]
+        },
+        "hvacwork": {
+            "name": "General HVAC Work",
+            "profile": "hvac",
+            "categories": []
+        },
+        "rtu": {
+            "name": "Rooftop Unit",
+            "profile": "hvac"
+        }
+    }
+}
