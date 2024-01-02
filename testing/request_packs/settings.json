@@ -1,0 +1,28 @@
+{
+    "GETsettings": {
+        "request": {
+            "default": {
+                "data": {
+                    "appinfo": {
+                        "apptype": "Estimator",
+                        "grouping": "ResReplace"
+                    },
+                    "userinfo": {
+                        "id": "MURRY",
+                        "access": {
+                            "resreplace": {
+                                "products": [
+                                    "boilers",
+                                    "tradsplit",
+                                    "mini",
+                                    "windows",
+                                    "doors"
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

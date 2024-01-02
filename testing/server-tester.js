@@ -4,6 +4,11 @@ const { exec } = require('child_process');
 let { Core } = require('vhp-api')
 
 let runner = new Core({
+    auth: {
+        user: "VOGCH",
+        pswrd: "vogel123"
+    },
+    client: true,
     host: 'http://localhost:5000/',
     dev: { comments: false, https: false }
 })

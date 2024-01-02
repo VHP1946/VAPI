@@ -1,62 +1,78 @@
 {
-	"name":"vhp-core",
-	"port":5000,
-	"dev":true,
-	"auth":{
-		"name":"STORE","group":"MART","type":"server",
-		"options":{
-			"hostname":"10.0.2.116",
-			"port":"80",
-			"method":"POST",
-			"headers":{
-				"Content-Type":"application/json"
+	"name": "vhp-core",
+	"port": 5000,
+	"dev": true,
+	"auth": {
+		"name": "STORE",
+		"group": "MART",
+		"type": "server",
+		"options": {
+			"hostname": "10.0.2.116",
+			"port": "80",
+			"method": "POST",
+			"headers": {
+				"Content-Type": "application/json"
 			}
 		}
 	},
-	"logging":{
-		"name":"STORE","group":"MART","type":"server",
-		"options":{
-			"hostname":"10.0.2.116",
-			"port":"80",
-			"method":"POST",
-			"headers":{
-				"Content-Type":"application/json"
+	"logging": {
+		"name": "STORE",
+		"group": "MART",
+		"type": "server",
+		"options": {
+			"hostname": "10.0.2.116",
+			"port": "80",
+			"method": "POST",
+			"headers": {
+				"Content-Type": "application/json"
 			}
 		}
 	},
-	"upstreams":{
-		"STORE":{"name":"STORE","group":"MART","type":"server",
-		"options":{
-			"http":{
-				"hostname":"10.0.2.116",
-				"port":"80",
-				"method":"POST",
-				"headers":{
-					"Content-Type":"application/json"
+	"upstreams": {
+		"STORE": {
+			"name": "STORE",
+			"group": "MART",
+			"type": "server",
+			"options": {
+				"http": {
+					"hostname": "10.0.2.116",
+					"port": "80",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					}
 				}
 			}
-		}},
-		"JAPI":{"name":"JAPI","group":"","type":"server",
-		"options":{
-			"http":{
-				"hostname":"10.0.2.157",
-				"port":"9000",
-				"method":"POST",
-				"headers":{
-					"Content-Type":"application/json"
+		},
+		"JAPI": {
+			"name": "JAPI",
+			"group": "",
+			"type": "server",
+			"options": {
+				"http": {
+					"hostname": "10.0.2.157",
+					"port": "9000",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					}
 				}
 			}
-		}},
-		"MAILSERVER":{"name":"MAILSERVER","group":"","type":"server",
-		"options":{
-			"http":{
-				"hostname":"10.0.2.157",
-				"port":"9001",
-				"method":"POST",
-				"headers":{
-					"Content-Type":"application/json"
+		},
+		"MAILSERVER": {
+			"name": "MAILSERVER",
+			"group": "",
+			"type": "server",
+			"options": {
+				"http": {
+					"hostname": "10.0.2.157",
+					"port": "9001",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/json"
+					}
 				}
 			}
-		}}
+		}
 	}
 }

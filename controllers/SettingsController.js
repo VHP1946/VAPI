@@ -17,31 +17,31 @@ module.exports = class SettingsController {
             QUERYsettings: {
                 name: 'QUERYsettings',
                 route: this.QUERYsettings,
-                models: ['QUERYsettings'],
+                models: ['SettingsModel'],
                 scheme: 'QUERYsettings'
             },
             GETsettings: {
                 name: 'GETsettings',
                 route: this.GETsettings,
-                models: ['GETsettings'],
+                models: ['SettingsModel'],
                 scheme: 'GETsettings'
             },
             GETallSettings: {
                 name: 'GETallSettings',
                 route: this.GETallSettings,
-                models: ['GETallSettings'],
+                models: ['SettingsModel'],
                 scheme: 'GETallSettings'
             },
             SAVEsettings: {
                 name: 'SAVEsettings',
                 route: this.SAVEsettings,
-                models: ['SAVEsettings'],
+                models: ['SettingsModel'],
                 scheme: 'SAVEsettings'
             },
             MAKEcurrent: {
                 name: 'MAKEcurrent',
                 route: this.MAKEcurrent,
-                models: ['MAKEcurrent'],
+                models: ['SettingsModel'],
                 scheme: 'MAKEcurrent'
             }
         }
@@ -67,9 +67,10 @@ module.exports = class SettingsController {
     */
     GETsettings = (handler, server) => {
         return new Promise(async (resolve, reject) => {
-            // Query DB
-            // Return result
-            return resolve(respack);
+            
+            let response = this.tools.aresponse(handler);
+
+            return resolve(response);
         })
     }
 

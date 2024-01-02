@@ -17,7 +17,6 @@ let Tracker = {
     apptype: "Tracking"
 }
 
-
 let user = {
     id: 'MURRY',
     name: "Ryan Murphy",
@@ -53,8 +52,6 @@ var getSettings = (usercreds, appinfo) => {
         if (gensets.always) {
             settings = { ...settings, ...gensets.always }
         }
-
-
 
         // figure out what Grouping is required via appinfo, grab those settings
         let groupsets = require(`./groups/Settings-${settings.grouping}.json`);
@@ -94,7 +91,7 @@ var getSettings = (usercreds, appinfo) => {
             // will "profiles" be the final property and Products just fill it?
             if (settings.profiles == undefined) { settings.profiles = {} };
 
-            // add Manufacturer info to each product via its list - if null or missing, no manf needed; if [], still add "default"
+            // add Manufacturer info from each product via its list - if null or missing, no manf needed; if [], still add "default"
             if (groupsets.products[thisproduct].manufacturers != undefined && groupsets.products[thisproduct].manufacturers != null) {
                 if (settings.manufacturers == undefined) { settings.manufacturers = {} };  // initialize if not there; placed her so if there are no manufacturers it will skip it
                 let mans = groupsets.products[thisproduct].manufacturers;
@@ -114,9 +111,9 @@ var getSettings = (usercreds, appinfo) => {
                 }
             }
 
-
+            // pull pricing "statics"
             if (groupsets.products[thisproduct].pricing != undefined && groupsets.products[thisproduct].pricing != null && groupsets.products[thisproduct].pricing.length > 0) {
-                if (settings.pricing == undefined) { settings.pricing = {} }// initialize if not there; placed here so if there are no financing options it will skip it
+                if (settings.pricing == undefined) { settings.pricing = {} }// initialize if not there; placed here so if there are no pricing options it will skip it
 
                 for (let y = 0; y < groupsets.products[thisproduct].pricing.length; y++) {
                     if (settings.pricing[groupsets.products[thisproduct].pricing[y]] == undefined) {
@@ -170,12 +167,18 @@ getSettings(user, Estimator).then(resp => {
  * Products will still be able to refer to manufacturers & financing; or we can nest them
  */
 let exsettings = {
+    grouping: '',
+    apptype: '',
+    appsets: {},
     workscheme: {
         STAGE1: {
             name: '',
             desc: '',
-            status: {
-                STATUS1: {},
+            statuses: {
+                STATUS1: {
+                    name: '',
+                    desc: ''
+                },
                 STATUS2: {}
             }
         },
@@ -183,24 +186,49 @@ let exsettings = {
     },
     products: {
         PROD1: {
-            categories: {
-                CAT1: {
-                    name: '',
-                    desc: '',
-                    type: {
-                        TYPE1: {},
-                        TYPE2: {}
-                    }
-                },
-                CAT2: {}
-            },
-            financing: [],
-            manufacturers: [],
+            name: '',
+            dept: '?',   // do we need?
+            profile: '',
+            categories: [],
+            manufacturers: ['MANF1', 'MANF3'],
 
         }
     },
-    manufacturers: {},
-    financing: {},
+    profiles: {
+        PROFILE1: {
+
+        },
+        PROFILE2: {}
+    },
+    manufacturers: {
+        MANF1: {
+            name: '',
+            'maxreb': 0,
+            'mfgportion': 0.5
+        },
+        MANF2: {}
+    },
+    pricing: {  // would this be more appropriate within the profiles?
+        MODEL1: {
+            name: '',
+            creditcard: 0,
+            labor: 90.00,
+            tgmargin: 0.44,
+            salestax: 0.09
+        },
+        MODEL2: {}
+    },
+    financing: {
+        finplans: [  // should we take the array-based list and make it an object list for easier use within the application?
+            {
+                name: '',
+                std: 0.0550,
+                promo: 0.08,
+                rate: 12,
+                desc: ''
+            }
+        ]
+    },
     utilityinfo: {
         gascomp: {},
         eleccomp: {}

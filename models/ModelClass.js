@@ -51,122 +51,41 @@
  * 
  * 
  */
-class ModelData{
-    constructor(){
-        this.lists={};
+
+module.exports = class ModelBase {
+    constructor() {
+        this.lists = {};
     }
 
-    SETlist(flts,name,list){
+    QUERYdb(db, collect, query = {}) {
+        return new Promise((resolve, reject) => {
+            let reqpack = {
+                db: db,
+                collect: collect,
+                method: 'QUERY',
+                options: {
+                    query: query
+                }
+            }
+            server.mart.request({ pack: reqpack, route: 'STORE' }).then(resp => {
+                return resolve(resp);
+            })
+        })
+    }
+
+    SETlist(flts, name, list) {
         //check valid list (array)
         //check if list already exits (proper clean when needed)
-        this.lists[name]=list;
+        this.lists[name] = list;
         //confirm add(true) OR not(false)
     }
 
-    GETlist(name,list){
-        if(this.lists[name] && this.lists[name].length<1){//check if exists AND is full
+    GETlist(name, list) {
+        if (this.lists[name] && this.lists[name].length < 1) {//check if exists AND is full
             return this.lists[name].data;
-        }else{return null}
+        } else { return null }
     }
-    REFRESHlists(names){
-        
-    }
-}
-
-class TrackingModels extends ModelData{
-    constructor(){
-        super();
+    REFRESHlists(names) {
 
     }
 }
-
-
-
-
-
-module.exports = {
-
-    QUERYtracks: (handler, server) => {
-        return new Promise(async (resolve, reject) => {
-            let resp = await QUERYtracks(handler, server, handler.pack.data);
-            let response = {
-                success: resp.success,
-                model: {}
-            }
-            if (response.success) {
-                response.model = resp.result;
-            }
-
-            return resolve(response);
-        })
-    },
-
-    GETtrack: (handler, server) => {
-        return new Promise(async (resolve, reject) => {
-            let resp = await QUERYtracks(handler, server, handler.pack.data);
-            let response = {
-                success: resp.success,
-                model: {}
-            }
-            if (response.success) {
-                if (Array.isArray(resp.result)) {
-                    response.model = resp.result[0];
-                } else {
-                    response.model = resp.result;
-                }
-            }
-
-            return resolve(response);
-        })
-    },
-
-    GETuserTracks: (handler, server) => {
-        return new Promise(async (resolve, reject) => {
-            let user = 'MURRY';
-            let resp = await QUERYtracks(handler, server, { estimator: user });
-            let response = {
-                success: resp.success,
-                model: {}
-            }
-            if (resp.success) {
-                response.model = resp.result;
-            }
-            return resolve(response);
-        })
-    }
-}
-
-
-function QUERYtracks(handler, server, query = {}) {
-    return new Promise((resolve, reject) => {
-        let reqpack = {
-            db: 'Replacement',
-            collect: 'Tracking350',
-            method: 'QUERY',
-            options: {
-                query: query
-            }
-        }
-        server.mart.request({ pack: reqpack, route: 'STORE' }).then(resp => {
-            return resolve(resp);
-        })
-    })
-}
-
-/*
-function QUERYtracks(handler, server, query = {}) {
-    return new Promise((resolve, reject) => {
-        let reqpack = {
-            db: 'Replacement',
-            collect: 'Tracking350',
-            method: 'QUERY',
-            options: {
-                query: query
-            }
-        }
-        runner.SENDrequest({ pack: reqpack, route: 'STORE' }).then(resp => {
-            return resolve(resp);
-        })
-    })
-}
-*/

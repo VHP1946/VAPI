@@ -4,7 +4,8 @@ const tools = require('../../tools/vg-gentools.js');
 let modules = {
     defaults: {},
     projects: {},
-    tracking: {}
+    tracking: {},
+    settings: {}
 }
 
 for (let m in modules) {
@@ -13,7 +14,7 @@ for (let m in modules) {
         modules[m][r] = r;
     }
 }
-console.log('Request packs set up >\n', modules);
+//console.log('Request packs set up >\n', modules);
 
 /**
  * Takes module to find JSON file.
