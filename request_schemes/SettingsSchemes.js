@@ -1,1 +1,7 @@
-module.exports = {}
+module.exports = {
+    settings: {
+        name: 'Settings',
+        strict: false,
+        scheme: {}
+    }
+}

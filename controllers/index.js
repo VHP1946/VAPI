@@ -9,11 +9,11 @@ let SupportController = require('./SupportController.js');
 let TrackingController = require('./TrackingController.js');
 
 module.exports = {
-    ...new AnalyticsController(lib),
-    ...new BackupsController(lib),
-    ...new PricingController(lib),
-    ...new ProjectsController(lib),
+    //...new AnalyticsController(lib),
+    //...new BackupsController(lib),
+    //...new PricingController(lib),
+    //...new ProjectsController(lib),
     ...new SettingsController(lib),
-    ...new SupportController(lib),
+    //...new SupportController(lib),
     ...new TrackingController(lib)
 }

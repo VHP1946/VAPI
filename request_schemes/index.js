@@ -8,11 +8,11 @@ let TrackingSchemes = require('./TrackingSchemes.js');
 
 
 module.exports = {
-    ...AnalyticsSchemes,
-    ...BackupsSchemes,
-    ...PricingSchemes,
-    ...ProjectSchemes,
+    //...AnalyticsSchemes,
+    //...BackupsSchemes,
+    //...PricingSchemes,
+    //...ProjectSchemes,
     ...SettingsSchemes,
-    ...SupportSchemes,
+    //...SupportSchemes,
     ...TrackingSchemes
 }

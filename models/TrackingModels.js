@@ -12,12 +12,6 @@ class TrackingModel extends ModelBase {
 
 
 module.exports = {
-/*
-    QUERYtracks: new TrackingModel(handler, server),
-    GETtrack: new TrackingModel(handler, server),
-    GETuserTracks: new TrackingModel(handler, server)
-*/
-    /*
     QUERYtracks: (handler, server) => {
         return new Promise(async (resolve, reject) => {
             let resp = await QUERYtracks(handler, server, handler.pack.data);
@@ -66,11 +60,9 @@ module.exports = {
             return resolve(response);
         })
     }
-    */
 }
 
 
-/*
 function QUERYtracks(handler, server, query = {}) {
     return new Promise((resolve, reject) => {
         let reqpack = {
@@ -86,4 +78,3 @@ function QUERYtracks(handler, server, query = {}) {
         })
     })
 }
-*/

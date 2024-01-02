@@ -4,13 +4,12 @@ const { exec } = require('child_process');
 let { Core } = require('vhp-api')
 
 let runner = new Core({
-    auth: {
-        user: "VOGCH",
-        pswrd: "vogel123"
+    auth:{
+        user: "test",
+        pswrd:"ing"
     },
-    client: true,
     host: 'http://localhost:5000/',
-    dev: { comments: false, https: false }
+    dev: { comments: true, https: false }
 })
 
 if (false) {
@@ -61,7 +60,7 @@ let RUNroute = (question = 'Run which route? -> ') => {
             if (req) {
                 //console.log('Request >',answrRoute)
                 runner.SENDrequest({
-                    url: 'http://localhost:5000/' + 'api/' + answrRoute,
+                    url: 'http://localhost:5000/' + 'api/',
                     route: answrRoute,
                     body: req
                 }).then(response => {
