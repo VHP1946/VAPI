@@ -57,7 +57,7 @@ module.exports = class ModelBase {
         this.lists = {};
     }
 
-    QUERYdb(db, collect, query = {}) {
+    QUERYdb(server, db, collect, query = {}) {
         return new Promise((resolve, reject) => {
             let reqpack = {
                 db: db,
@@ -67,8 +67,10 @@ module.exports = class ModelBase {
                     query: query
                 }
             }
-            server.mart.request({ pack: reqpack, route: 'STORE' }).then(resp => {
-                return resolve(resp);
+            console.log("QUERY",server.services.store);
+            server.services.store.request({ body: reqpack }).then(resp => {
+                console.log("resp", resp)
+                return resolve(resp.result);
             })
         })
     }

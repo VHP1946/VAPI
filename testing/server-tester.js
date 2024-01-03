@@ -64,7 +64,9 @@ let RUNroute = (question = 'Run which route? -> ') => {
                     route: answrRoute,
                     body: req
                 }).then(response => {
-                    console.log('\n\nResponse >', response)
+                    
+                    //console.log('\n\nResponse >', response)
+                    
                     /*
                     let check = modules.checker({ route: answrRoute, type: answrType, response: response });
                     if (!check.success){

@@ -1,5 +1,10 @@
 {
-    "always": {},
+    "group": "Replacement",
+    "category": "Residential",
+    "dept": [
+        "350",
+        "BEE"
+    ],
     "workscheme": [
         "lead",
         "quote",
@@ -12,6 +17,7 @@
     ],
     "productProfiles": {
         "hvac": {
+            "dept": "350",
             "pricekey": "Pricing350",
             "pricing": [
                 "resinstall"
@@ -206,6 +212,7 @@
             }
         },
         "bee": {
+            "dept": "bee",
             "pricekey": "PricingBEE",
             "pricing": [
                 "bee"
@@ -236,7 +243,6 @@
     "products": {
         "boilers": {
             "name": "Boiler",
-            "dept": "350",
             "profile": "hvac",
             "categories": [
                 "boiler"
@@ -247,7 +253,6 @@
         },
         "geo": {
             "name": "Geothermal",
-            "dept": "350",
             "profile": "hvac",
             "categories": [
                 "geothermal"

@@ -1,15 +1,14 @@
 {
-    "always": {
-        "utilityinfo": {
-            "eleccomp": {
-                "ameren": "Ameren MO",
-                "kirkwood": "Kirkwood Elec",
-                "none": "Other / None"
-            },
-            "gascomp": {
-                "spire": "Spire",
-                "none": "Other / None"
-            }
+    "category": "General",
+    "utilityinfo": {
+        "eleccomp": {
+            "ameren": "Ameren MO",
+            "kirkwood": "Kirkwood Elec",
+            "none": "Other / None"
+        },
+        "gascomp": {
+            "spire": "Spire",
+            "none": "Other / None"
         }
     },
     "workscheme": {
@@ -133,7 +132,7 @@
             "name": "DEFAULT"
         }
     },
-    "marketing":{
+    "marketing": {
         "generator": {
             "amerenue": {
                 "name": "Ameren UE",

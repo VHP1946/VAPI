@@ -6,18 +6,21 @@
                     "appinfo": {
                         "apptype": "Estimator",
                         "grouping": "Replacement",
-                        "cat":"Residential",
-                        "dept":[]
+                        "category": "Residential",
+                        "dept": []
                     },
-                    "userid":"",
+                    "userid": "",
                     "userinfo": {
                         "id": "MURRY",
-                        "apps":["Estimator"],
-                        "groups":[
-                            {"group":"Replacement",
-                                "cats":[
-                                    {"cat":"Residential",
-                                        "dept":[],
+                        "apps": [
+                            "Estimator"
+                        ],
+                        "groups": [
+                            {
+                                "group": "Replacement",
+                                "categories": [
+                                    {
+                                        "category": "Residential",
                                         "products": [
                                             "boilers",
                                             "tradsplit",

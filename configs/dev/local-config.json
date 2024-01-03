@@ -28,7 +28,7 @@
 		"STORE":{"name":"STORE","group":"MART","type":"server",
 		"options":{
 			"http":{
-				"hostname":"127.0.0.1",
+				"hostname":"dev.vhpportal.com",
 				"port":"80",
 				"method":"POST",
 				"headers":{

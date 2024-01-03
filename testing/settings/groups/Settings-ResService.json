@@ -1,68 +1,76 @@
-{"workscheme": [
-    "lead",
-    "quote",
-    "job",
-    "archived"
-],
-"workflows": [
-    "01",
-    "02"
-],
-"productProfiles": {
-    "hvac": {
-        "pricekey": "",
-        "pricing": [
-            "resservice"
-        ]
+{
+    "group": "Service",
+    "category": "Residential",
+    "dept": [
+        "300"
+    ],
+    "workscheme": [
+        "lead",
+        "quote",
+        "job",
+        "archived"
+    ],
+    "workflows": [
+        "01",
+        "02"
+    ],
+    "productProfiles": {
+        "hvac": {
+            "dept": "300",
+            "pricekey": "",
+            "pricing": [
+                "resservice"
+            ]
+        }
+    },
+    "manufacturers": {},
+    "products": {
+        "boilers": {
+            "name": "Boiler",
+            "profile": "hvac",
+            "categories": [
+                "boiler"
+            ]
+        },
+        "geo": {
+            "name": "Geothermal",
+            "profile": "hvac",
+            "categories": [
+                "geothermal"
+            ]
+        },
+        "tradsplit": {
+            "name": "Traditional Split",
+            "profile": "hvac",
+            "categories": [
+                "system",
+                "furnace",
+                "condensor"
+            ]
+        },
+        "mini": {
+            "name": "Mini- / Multi-Split",
+            "profile": "hvac",
+            "categories": [
+                "mini"
+            ]
+        },
+        "iaq": {
+            "name": "IAQ",
+            "profile": "hvac",
+            "categories": [
+                "iaq"
+            ]
+        },
+        "hvacwork": {
+            "name": "General HVAC Work",
+            "profile": "hvac",
+            "categories": [
+                "custom",
+                "testing",
+                "repair",
+                "rewards"
+            ]
+        }
     }
-},
-"manufacturers": {},
-"products": {
-    "boilers": {
-        "name": "Boiler",
-        "profile": "hvac",
-        "categories": [
-            "boiler"
-        ]
-    },
-    "geo": {
-        "name": "Geothermal",
-        "profile": "hvac",
-        "categories": [
-            "geothermal"
-        ]
-    },
-    "tradsplit": {
-        "name": "Traditional Split",
-        "profile": "hvac",
-        "categories": [
-            "system",
-            "furnace",
-            "condensor"
-        ]
-    },
-    "mini": {
-        "name": "Mini- / Multi-Split",
-        "profile": "hvac",
-        "categories": [
-            "mini"
-        ]
-    },
-    "iaq": {
-        "name": "IAQ",
-        "profile": "hvac",
-        "categories": [
-            "iaq"
-        ]
-    },
-    "hvacwork": {
-        "name": "General HVAC Work",
-        "profile": "hvac",
-        "categories": [
-            "custom",
-            "testing",
-            "repair",
-            "rewards"
-        ]
-    }
-}}
+}

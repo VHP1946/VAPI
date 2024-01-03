@@ -43,7 +43,6 @@ module.exports = class SettingsController {
     */
     GETsettings = (handler, server) => {
         return new Promise(async (resolve, reject) => {
-
             let response = this.tools.aresponse(handler);
             for(let ea in handler.models){
                 response.data = {
