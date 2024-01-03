@@ -9,24 +9,24 @@ module.exports = class SettingsModel extends ModelBase {
         //this.query = handler.pack.data || {};
 
         return (handler, server) => {
-                return new Promise(async (resolve, reject) => {
-                    let appinfo = handler.pack.data.appinfo;
-                    let usercreds = handler.pack.data.userinfo;
+            return new Promise(async (resolve, reject) => {
+                let appinfo = handler.pack.data.appinfo;
+                let usercreds = handler.pack.data.userinfo;
 
-                    let resp = await this.GETsettings(appinfo, usercreds);
+                let resp = await this.GETsettings(appinfo, usercreds);
 
-                    let response = {
-                        success: resp.success,
-                        model: {}
-                    }
-                    if (response.success) {
-                        response.model = resp.result;
-                    }
+                let response = {
+                    success: resp.success,
+                    model: {}
+                }
+                if (response.success) {
+                    response.model = resp.result;
+                }
 
-                    return resolve(response);
-                })
-            }
-        
+                return resolve(response);
+            })
+        }
+
     }
 
     GETsettings(appinfo, usercreds) {
@@ -35,11 +35,21 @@ module.exports = class SettingsModel extends ModelBase {
             let settings = {
                 grouping: appinfo.grouping,  // there should always be a settings file for a Grouping; it will contain the workscheme, which is always required
                 apptype: appinfo.apptype,  // the App Type (Estimator, Tracking, etc.) should always be defined, but we may have some that do not require specific files
+                category: appinfo.cat,
                 workscheme: {}
             };
 
             // use usercreds and appinfo to decide what products the user has access to within the app
-            let products = usercreds.access[settings.grouping.toLowerCase()].products || [];
+            let products = [];
+            for (let i = 0; i < usercreds.groups; i++) {
+                if (usercreds.groups[i].group == settings.grouping) {
+                    for (let y = 0; y < usercreds.groups[i].cat.length; y++) {
+                        if (usercreds.groups[i].cat[y].category == settings.category) {
+                            products.push(usercreds.groups[i].cat[y].products);
+                        }
+                    }
+                }
+            }
 
             // grab General settings
             let gensets = require('../testing/settings/top-level/Settings-General.json');
@@ -148,7 +158,7 @@ module.exports = class SettingsModel extends ModelBase {
                 }
             }
 
-            return resolve({success: true, msg: 'Settings Combined', result: settings});
+            return resolve({ success: true, msg: 'Settings Combined', result: settings });
         })
     }
 }
