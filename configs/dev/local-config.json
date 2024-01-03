@@ -5,7 +5,7 @@
 	"auth":{
 		"name":"STORE","group":"MART","type":"server",
 		"options":{
-			"hostname":"dev.vhpportal.com",
+			"hostname":"127.0.0.0",
 			"port":"80",
 			"method":"POST",
 			"headers":{
@@ -29,7 +29,7 @@
 		"options":{
 			"http":{
 				"hostname":"127.0.0.1",
-				"port":"8080",
+				"port":"80",
 				"method":"POST",
 				"headers":{
 					"Content-Type":"application/json"
