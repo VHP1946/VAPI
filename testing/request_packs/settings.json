@@ -5,21 +5,30 @@
                 "data": {
                     "appinfo": {
                         "apptype": "Estimator",
-                        "grouping": "ResReplace"
+                        "grouping": "Replacement",
+                        "cat":"Residential",
+                        "dept":[]
                     },
+                    "userid":"",
                     "userinfo": {
                         "id": "MURRY",
-                        "access": {
-                            "resreplace": {
-                                "products": [
-                                    "boilers",
-                                    "tradsplit",
-                                    "mini",
-                                    "windows",
-                                    "doors"
+                        "apps":["Estimator"],
+                        "groups":[
+                            {"group":"Replacement",
+                                "cats":[
+                                    {"cat":"Residential",
+                                        "dept":[],
+                                        "products": [
+                                            "boilers",
+                                            "tradsplit",
+                                            "mini",
+                                            "windows",
+                                            "doors"
+                                        ]
+                                    }
                                 ]
                             }
-                        }
+                        ]
                     }
                 }
             }
