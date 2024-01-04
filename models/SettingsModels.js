@@ -11,7 +11,6 @@ module.exports = class SettingsModel extends ModelBase {
                 let appinfo = handler.pack.data.appinfo;
                 let usercreds = handler.pack.data.userinfo;
 
-                console.log('SettingsModel', server)
                 let resp = await this.GETsettings(server, appinfo, usercreds);
 
                 let response = {
@@ -43,7 +42,7 @@ module.exports = class SettingsModel extends ModelBase {
                 if (usercreds.groups[i].group.toLowerCase() == settings.grouping.toLowerCase()) {
                     for (let y = 0; y < usercreds.groups[i].categories.length; y++) {
                         if (usercreds.groups[i].categories[y].category.toLowerCase() == settings.category.toLowerCase()) {
-                            products.push(usercreds.groups[i].categories[y].products);
+                            products.push(...usercreds.groups[i].categories[y].products);
                         }
                     }
                 }
@@ -51,22 +50,31 @@ module.exports = class SettingsModel extends ModelBase {
 
             // grab General settings
             let gensets = await this.QUERYdb(server, this.db, 'General', { category: 'General' });
-            console.log('GENSETS >> ', gensets)
-
-
-            // add General's "hardcoded" / "always" block to object [workscheme,progress]
-            if (gensets.always) {
-                settings = { ...settings, ...gensets.always }
+            if (gensets.length == 1) {
+                gensets = gensets[0];
+                if (gensets.always) {
+                    settings = { ...settings, ...gensets.always }
+                }
+            } else if (gensets.length > 1) {
+                console.log("Pulled too many General settings documents from General collection")
+            } else if (gensets.length = 0) {
+                console.log("Did not find General settings in General collection")
             }
 
-            // grab Pricing settings
+            // grab Pricing settings   -   move within products to account for apps that will not need pricing
             let pricesets = await this.QUERYdb(server, this.db, 'General', { category: 'Pricing' });
+            if (pricesets.length == 1) {
+                pricesets = pricesets[0];
+            } else if (pricesets.length > 1) {
+                console.log("Pulled too many Pricing settings documents from General collection")
+            } else if (pricesets.length = 0) {
+                console.log("Did not find Pricing settings in General collection")
+            }
 
             // figure out what Grouping is required via appinfo, grab those settings
-            let groupsets = await this.QUERYdb(server, this.db, 'Groups', { group: settings.grouping, category: settings.category });
-            
-            if (groupsets != null) {
-                // add Grouping's "always" block to object
+            let groupsets = await this.QUERYdb(server, this.db, 'Group', { group: settings.grouping, category: settings.category });
+            if (groupsets.length == 1) {
+                groupsets = groupsets[0];
                 if (groupsets.always) {
                     settings = { ...settings, ...groupsets.always }
                 }
@@ -89,8 +97,12 @@ module.exports = class SettingsModel extends ModelBase {
                     let thisproduct = products[i].toLowerCase();
                     settings.products[thisproduct] = groupsets.products[thisproduct];
 
-                    // will "profiles" be the final property and Products just fill it?
                     if (settings.profiles == undefined) { settings.profiles = {} };
+                    if (settings.products[thisproduct].profile != undefined && settings.products[thisproduct].profile != null
+                        && settings.profiles[settings.products[thisproduct].profile] == undefined) {
+                            console.log('PROFILE');
+                        settings.profiles[settings.products[thisproduct].profile] = { ...groupsets.productProfiles[settings.products[thisproduct].profile] }
+                    }
 
                     // add Manufacturer info from each product via its list - if null or missing, no manf needed; if [], still add "default"
                     if (groupsets.products[thisproduct].manufacturers != undefined && groupsets.products[thisproduct].manufacturers != null) {
@@ -151,19 +163,21 @@ module.exports = class SettingsModel extends ModelBase {
                         }
                     }
                 }
+            } else if (groupsets.length > 1) {
+                console.log("Pulled too many Group settings documents from Groups collection")
+            } else if (groupsets.length = 0) {
+                console.log("Did not find Group settings in Groups collection")
             }
 
-            let apps = await this.QUERYdb(server, this.db, 'Apps');
-            let appsets = null;
-            for (let i = 0; i < apps.length; i++) {
-                if (apps[i].apptype.toLowerCase() == settings.apptype.toLowerCase()) {
-                    appsets = apps[i];
-                    break;
-                }
-            }
-
-            if (appsets != null) {
-                settings = { ...settings, appsets: appsets }  // keep App-Specific settings together for easier use
+            let appsets = await this.QUERYdb(server, this.db, 'App', { apptype: settings.apptype });
+            if (appsets.length == 1) {
+                settings = { ...settings, appsets: appsets[0] };
+                delete settings.appsets._id;
+                delete settings.appsets.apptype;
+            } else if (appsets.length > 1) {
+                console.log("Pulled too many AppType settings documents from Apps collection")
+            } else if (appsets.length = 0) {
+                console.log("Did not find any AppType settings in Apps collection")
             }
 
             return resolve({ success: true, msg: 'Settings Combined', result: settings });

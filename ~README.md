@@ -49,7 +49,7 @@ logging: More than likely be moved out and packaged, but for not a module to att
 
 Contents:
 - Tracker
-
+- Settings
 
 
 
@@ -58,3 +58,13 @@ Contents:
  Description:
  Pack:
  Response:
+
+
+## Settings
+GETsettings
+required: data = { appinfo, userinfo }
+returns: response.data = settings object
+Used to grab all the settings required by an application.
+Applications must be classified with certain properties (apptype, grouping, category). These will be properties at the base level of the package.json file.
+The route will use the application's information as well as an access list from the user's account to determine what to pull and combine.
+There are four primary pulls that reach out to four different documents. Two pulls will be from the "Generals" collection: Pricing and General Settings. These settings packages apply to most every application. One pull will be to grab the AppType settings. These are settings that apply to any applications that do similar tasks, regardless of which department is using them. Examples of AppTypes are Estimator, and Tracking. The final pull will be grouping-specific. The route will use the application's Grouping and Category properties to find the correct settings document within the Groups collection.

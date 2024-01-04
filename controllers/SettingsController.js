@@ -38,8 +38,8 @@ module.exports = class SettingsController {
 
     /**
     * Retrieves a specific Settings object from the database
-    * @requires { data: Object } = { version: String, dept: String }
-    * @returns { data: Object } Settings object
+    * @requires 
+    * @returns { object } response.data = Settings object
     */
     GETsettings = (handler, server) => {
         return new Promise(async (resolve, reject) => {

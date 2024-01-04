@@ -209,7 +209,16 @@
                         }
                     }
                 }
-            }
+            },
+            "noparts": [
+                "MINIS",
+                "BOIL",
+                "GEO"
+            ],
+            "swapcats": [
+                "Controls",
+                "Heat Kit"
+            ]
         },
         "bee": {
             "dept": "bee",

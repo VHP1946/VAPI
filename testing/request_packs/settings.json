@@ -34,6 +34,72 @@
                         ]
                     }
                 }
+            },
+            "nobee":{
+                "data": {
+                    "appinfo": {
+                        "apptype": "Estimator",
+                        "grouping": "Replacement",
+                        "category": "Residential",
+                        "dept": []
+                    },
+                    "userid": "",
+                    "userinfo": {
+                        "id": "MURRY",
+                        "apps": [
+                            "Estimator"
+                        ],
+                        "groups": [
+                            {
+                                "group": "Replacement",
+                                "categories": [
+                                    {
+                                        "category": "Residential",
+                                        "products": [
+                                            "boilers",
+                                            "tradsplit",
+                                            "mini"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "tracker":{
+                "data": {
+                    "appinfo": {
+                        "apptype": "Tracking",
+                        "grouping": "Replacement",
+                        "category": "Residential",
+                        "dept": []
+                    },
+                    "userid": "",
+                    "userinfo": {
+                        "id": "MURRY",
+                        "apps": [
+                            "Estimator"
+                        ],
+                        "groups": [
+                            {
+                                "group": "Replacement",
+                                "categories": [
+                                    {
+                                        "category": "Residential",
+                                        "products": [
+                                            "boilers",
+                                            "tradsplit",
+                                            "mini",
+                                            "doors",
+                                            "windows"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
             }
         }
     }

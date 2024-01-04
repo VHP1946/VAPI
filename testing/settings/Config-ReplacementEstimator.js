@@ -13,15 +13,6 @@ const products = {
             "BOIL",
             "GEO"
         ],
-        "noparts": [
-            "MINIS",
-            "BOIL",
-            "GEO"
-        ],
-        "swapcats": [
-            "Controls",
-            "Heat Kit"
-        ],
         "tiers": [
             {
                 "code": "CODE",

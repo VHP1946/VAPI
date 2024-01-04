@@ -67,9 +67,9 @@ module.exports = class ModelBase {
                     query: query
                 }
             }
-            console.log("QUERY",server.services.store);
+            //console.log("QUERY",server.services.store);
             server.services.store.request({ body: reqpack }).then(resp => {
-                console.log("resp", resp)
+                console.log("resp", collect, resp)
                 return resolve(resp.result);
             })
         })

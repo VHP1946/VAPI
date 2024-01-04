@@ -28,8 +28,8 @@
 		"STORE":{"name":"STORE","group":"MART","type":"server",
 		"options":{
 			"http":{
-				"hostname":"dev.vhpportal.com",
-				"port":"80",
+				"hostname":"192.168.0.86",
+				"port":"8080",
 				"method":"POST",
 				"headers":{
 					"Content-Type":"application/json"
